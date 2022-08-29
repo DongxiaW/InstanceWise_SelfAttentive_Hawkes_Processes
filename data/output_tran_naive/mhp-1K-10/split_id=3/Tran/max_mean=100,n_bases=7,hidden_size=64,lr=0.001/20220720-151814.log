@@ -1,6 +1,0 @@
-[ 2022-07-20 15:18:14,496][train.<module>] Namespace(attr_batch_size=0, basis_type='dyadic', batch_size=64, bucket_seqs=False, cuda=True, dataset='mhp-1K-10', dropout=0.0, embedding_dim=64, epochs=2, hidden_size=64, input_dir='data/input', l2_reg=0, lr=0.001, max_mean=100, model='Tran', n_bases=7, num_workers=0, occurred_type_only=False, optimizer='Adam', output_dir='data/output', rand_seed=0, skip_eval_infectivity=False, skip_pred_next_event=False, split_id=3, steps=50, tune_metric='nll', verbose=False)
-[ 2022-07-20 15:18:23,395][train.train_nn_models] [Training] Epoch=0, loss=10735.0889, nll=10735.0889, l2_reg=0.0000, acc=0.0925
-[ 2022-07-20 15:18:23,395][train.train_nn_models] [Validation] Epoch=0, nll=5106.0454, acc=0.0948
-[ 2022-07-20 15:18:31,400][train.train_nn_models] [Training] Epoch=1, loss=3145.0886, nll=3145.0886, l2_reg=0.0000, acc=0.0949
-[ 2022-07-20 15:18:31,400][train.train_nn_models] [Validation] Epoch=1, nll=1931.7120, acc=0.0875
-[ 2022-07-20 15:18:32,186][train.eval_nll] [Test]nll=2134.7654, acc=0.0867

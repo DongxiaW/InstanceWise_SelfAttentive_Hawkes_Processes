@@ -7,8 +7,8 @@
     "exp_decay": 0.05,
     "constant_decay": false,
     "adj_spectral_radius": 0.8,
-    "max_jumps": 250,
+    "max_jumps": 500,
     "n_splits": 5,
-    "rand_seed": 0,
+    "rand_seed": 1,
     "fit": false
 }
