@@ -1,0 +1,510 @@
+[ 2022-07-06 16:16:08,814][train.<module>] Namespace(attr_batch_size=0, basis_type='dyadic', batch_size=64, bucket_seqs=False, cuda=True, dataset='mhp-1K-10', dropout=0.0, embedding_dim=64, epochs=200, hidden_size=64, input_dir='data/input', l2_reg=0, lr=0.001, max_mean=100, model='ERPP', n_bases=7, num_workers=0, occurred_type_only=False, optimizer='Adam', output_dir='data/output', rand_seed=0, rnn='GRU', skip_eval_infectivity=False, skip_pred_next_event=False, split_id=3, steps=50, tune_metric='nll', verbose=False)
+[ 2022-07-06 16:16:25,924][train.train_nn_models] [Training] Epoch=0, loss=10992.6221, nll=10992.6221, l2_reg=0.0000, acc=0.1148
+[ 2022-07-06 16:16:25,924][train.train_nn_models] [Validation] Epoch=0, nll=7357.8223, acc=0.1208
+[ 2022-07-06 16:16:31,649][train.train_nn_models] [Training] Epoch=1, loss=4630.1836, nll=4630.1836, l2_reg=0.0000, acc=0.1065
+[ 2022-07-06 16:16:31,663][train.train_nn_models] [Validation] Epoch=1, nll=1907.0897, acc=0.0861
+[ 2022-07-06 16:16:35,981][train.train_nn_models] [Training] Epoch=2, loss=1495.6162, nll=1495.6162, l2_reg=0.0000, acc=0.0875
+[ 2022-07-06 16:16:35,994][train.train_nn_models] [Validation] Epoch=2, nll=1344.1580, acc=0.1049
+[ 2022-07-06 16:16:40,468][train.train_nn_models] [Training] Epoch=3, loss=1367.8341, nll=1367.8341, l2_reg=0.0000, acc=0.1223
+[ 2022-07-06 16:16:40,484][train.train_nn_models] [Validation] Epoch=3, nll=1362.8037, acc=0.1530
+[ 2022-07-06 16:16:46,110][train.train_nn_models] [Training] Epoch=4, loss=1347.2693, nll=1347.2693, l2_reg=0.0000, acc=0.1690
+[ 2022-07-06 16:16:46,128][train.train_nn_models] [Validation] Epoch=4, nll=1311.3022, acc=0.1735
+[ 2022-07-06 16:16:52,279][train.train_nn_models] [Training] Epoch=5, loss=1304.8831, nll=1304.8831, l2_reg=0.0000, acc=0.1780
+[ 2022-07-06 16:16:52,279][train.train_nn_models] [Validation] Epoch=5, nll=1291.4556, acc=0.1761
+[ 2022-07-06 16:16:57,918][train.train_nn_models] [Training] Epoch=6, loss=1293.1826, nll=1293.1826, l2_reg=0.0000, acc=0.1782
+[ 2022-07-06 16:16:57,935][train.train_nn_models] [Validation] Epoch=6, nll=1284.2130, acc=0.1847
+[ 2022-07-06 16:17:02,905][train.train_nn_models] [Training] Epoch=7, loss=1286.7914, nll=1286.7914, l2_reg=0.0000, acc=0.1782
+[ 2022-07-06 16:17:02,906][train.train_nn_models] [Validation] Epoch=7, nll=1279.3124, acc=0.1813
+[ 2022-07-06 16:17:07,207][train.train_nn_models] [Training] Epoch=8, loss=1282.3955, nll=1282.3955, l2_reg=0.0000, acc=0.1767
+[ 2022-07-06 16:17:07,243][train.train_nn_models] [Validation] Epoch=8, nll=1275.6063, acc=0.1840
+[ 2022-07-06 16:17:11,849][train.train_nn_models] [Training] Epoch=9, loss=1278.2777, nll=1278.2777, l2_reg=0.0000, acc=0.1803
+[ 2022-07-06 16:17:11,868][train.train_nn_models] [Validation] Epoch=9, nll=1271.8319, acc=0.1850
+[ 2022-07-06 16:17:16,507][train.train_nn_models] [Training] Epoch=10, loss=1274.1836, nll=1274.1836, l2_reg=0.0000, acc=0.1815
+[ 2022-07-06 16:17:16,509][train.train_nn_models] [Validation] Epoch=10, nll=1267.9427, acc=0.1856
+[ 2022-07-06 16:17:22,655][train.train_nn_models] [Training] Epoch=11, loss=1270.1122, nll=1270.1122, l2_reg=0.0000, acc=0.1819
+[ 2022-07-06 16:17:22,656][train.train_nn_models] [Validation] Epoch=11, nll=1264.0114, acc=0.1854
+[ 2022-07-06 16:17:26,860][train.train_nn_models] [Training] Epoch=12, loss=1266.0049, nll=1266.0049, l2_reg=0.0000, acc=0.1825
+[ 2022-07-06 16:17:26,863][train.train_nn_models] [Validation] Epoch=12, nll=1260.0352, acc=0.1852
+[ 2022-07-06 16:17:32,493][train.train_nn_models] [Training] Epoch=13, loss=1261.8713, nll=1261.8713, l2_reg=0.0000, acc=0.1832
+[ 2022-07-06 16:17:32,496][train.train_nn_models] [Validation] Epoch=13, nll=1256.0826, acc=0.1857
+[ 2022-07-06 16:17:37,340][train.train_nn_models] [Training] Epoch=14, loss=1257.7426, nll=1257.7426, l2_reg=0.0000, acc=0.1835
+[ 2022-07-06 16:17:37,342][train.train_nn_models] [Validation] Epoch=14, nll=1252.0806, acc=0.1860
+[ 2022-07-06 16:17:42,652][train.train_nn_models] [Training] Epoch=15, loss=1253.5750, nll=1253.5750, l2_reg=0.0000, acc=0.1842
+[ 2022-07-06 16:17:42,671][train.train_nn_models] [Validation] Epoch=15, nll=1248.0045, acc=0.1854
+[ 2022-07-06 16:17:47,898][train.train_nn_models] [Training] Epoch=16, loss=1249.3462, nll=1249.3462, l2_reg=0.0000, acc=0.1848
+[ 2022-07-06 16:17:47,903][train.train_nn_models] [Validation] Epoch=16, nll=1243.8376, acc=0.1867
+[ 2022-07-06 16:17:52,317][train.train_nn_models] [Training] Epoch=17, loss=1245.0358, nll=1245.0358, l2_reg=0.0000, acc=0.1854
+[ 2022-07-06 16:17:52,321][train.train_nn_models] [Validation] Epoch=17, nll=1239.5505, acc=0.1871
+[ 2022-07-06 16:17:56,759][train.train_nn_models] [Training] Epoch=18, loss=1240.6127, nll=1240.6127, l2_reg=0.0000, acc=0.1859
+[ 2022-07-06 16:17:56,764][train.train_nn_models] [Validation] Epoch=18, nll=1235.1239, acc=0.1873
+[ 2022-07-06 16:18:01,339][train.train_nn_models] [Training] Epoch=19, loss=1236.0928, nll=1236.0928, l2_reg=0.0000, acc=0.1862
+[ 2022-07-06 16:18:01,344][train.train_nn_models] [Validation] Epoch=19, nll=1230.6199, acc=0.1877
+[ 2022-07-06 16:18:05,570][train.train_nn_models] [Training] Epoch=20, loss=1231.4911, nll=1231.4911, l2_reg=0.0000, acc=0.1868
+[ 2022-07-06 16:18:05,574][train.train_nn_models] [Validation] Epoch=20, nll=1226.0085, acc=0.1884
+[ 2022-07-06 16:18:09,965][train.train_nn_models] [Training] Epoch=21, loss=1226.7843, nll=1226.7843, l2_reg=0.0000, acc=0.1874
+[ 2022-07-06 16:18:09,969][train.train_nn_models] [Validation] Epoch=21, nll=1221.2745, acc=0.1893
+[ 2022-07-06 16:18:14,454][train.train_nn_models] [Training] Epoch=22, loss=1221.9606, nll=1221.9606, l2_reg=0.0000, acc=0.1880
+[ 2022-07-06 16:18:14,458][train.train_nn_models] [Validation] Epoch=22, nll=1216.4071, acc=0.1901
+[ 2022-07-06 16:18:20,414][train.train_nn_models] [Training] Epoch=23, loss=1216.9939, nll=1216.9939, l2_reg=0.0000, acc=0.1886
+[ 2022-07-06 16:18:20,419][train.train_nn_models] [Validation] Epoch=23, nll=1211.3862, acc=0.1903
+[ 2022-07-06 16:18:25,864][train.train_nn_models] [Training] Epoch=24, loss=1211.8723, nll=1211.8723, l2_reg=0.0000, acc=0.1893
+[ 2022-07-06 16:18:25,869][train.train_nn_models] [Validation] Epoch=24, nll=1206.1787, acc=0.1904
+[ 2022-07-06 16:18:30,395][train.train_nn_models] [Training] Epoch=25, loss=1206.6381, nll=1206.6381, l2_reg=0.0000, acc=0.1897
+[ 2022-07-06 16:18:30,399][train.train_nn_models] [Validation] Epoch=25, nll=1200.9498, acc=0.1899
+[ 2022-07-06 16:18:35,230][train.train_nn_models] [Training] Epoch=26, loss=1201.3280, nll=1201.3280, l2_reg=0.0000, acc=0.1914
+[ 2022-07-06 16:18:35,234][train.train_nn_models] [Validation] Epoch=26, nll=1195.5903, acc=0.1913
+[ 2022-07-06 16:18:39,641][train.train_nn_models] [Training] Epoch=27, loss=1195.9380, nll=1195.9380, l2_reg=0.0000, acc=0.1924
+[ 2022-07-06 16:18:39,647][train.train_nn_models] [Validation] Epoch=27, nll=1190.1708, acc=0.1919
+[ 2022-07-06 16:18:44,348][train.train_nn_models] [Training] Epoch=28, loss=1190.5044, nll=1190.5044, l2_reg=0.0000, acc=0.1935
+[ 2022-07-06 16:18:44,352][train.train_nn_models] [Validation] Epoch=28, nll=1184.7056, acc=0.1938
+[ 2022-07-06 16:18:49,485][train.train_nn_models] [Training] Epoch=29, loss=1185.0482, nll=1185.0482, l2_reg=0.0000, acc=0.1951
+[ 2022-07-06 16:18:49,490][train.train_nn_models] [Validation] Epoch=29, nll=1179.1930, acc=0.1947
+[ 2022-07-06 16:18:54,669][train.train_nn_models] [Training] Epoch=30, loss=1179.5881, nll=1179.5881, l2_reg=0.0000, acc=0.1962
+[ 2022-07-06 16:18:54,671][train.train_nn_models] [Validation] Epoch=30, nll=1173.6832, acc=0.1965
+[ 2022-07-06 16:18:59,093][train.train_nn_models] [Training] Epoch=31, loss=1174.0818, nll=1174.0818, l2_reg=0.0000, acc=0.1975
+[ 2022-07-06 16:18:59,096][train.train_nn_models] [Validation] Epoch=31, nll=1168.1239, acc=0.1976
+[ 2022-07-06 16:19:03,570][train.train_nn_models] [Training] Epoch=32, loss=1168.6229, nll=1168.6229, l2_reg=0.0000, acc=0.1991
+[ 2022-07-06 16:19:03,574][train.train_nn_models] [Validation] Epoch=32, nll=1162.7687, acc=0.1997
+[ 2022-07-06 16:19:08,380][train.train_nn_models] [Training] Epoch=33, loss=1163.4573, nll=1163.4573, l2_reg=0.0000, acc=0.2007
+[ 2022-07-06 16:19:08,384][train.train_nn_models] [Validation] Epoch=33, nll=1157.6624, acc=0.2013
+[ 2022-07-06 16:19:13,782][train.train_nn_models] [Training] Epoch=34, loss=1158.5026, nll=1158.5026, l2_reg=0.0000, acc=0.2024
+[ 2022-07-06 16:19:13,785][train.train_nn_models] [Validation] Epoch=34, nll=1152.8176, acc=0.2038
+[ 2022-07-06 16:19:18,796][train.train_nn_models] [Training] Epoch=35, loss=1153.7992, nll=1153.7992, l2_reg=0.0000, acc=0.2039
+[ 2022-07-06 16:19:18,799][train.train_nn_models] [Validation] Epoch=35, nll=1148.2139, acc=0.2061
+[ 2022-07-06 16:19:22,831][train.train_nn_models] [Training] Epoch=36, loss=1149.3363, nll=1149.3363, l2_reg=0.0000, acc=0.2054
+[ 2022-07-06 16:19:22,834][train.train_nn_models] [Validation] Epoch=36, nll=1143.8733, acc=0.2074
+[ 2022-07-06 16:19:27,554][train.train_nn_models] [Training] Epoch=37, loss=1145.1208, nll=1145.1208, l2_reg=0.0000, acc=0.2069
+[ 2022-07-06 16:19:27,556][train.train_nn_models] [Validation] Epoch=37, nll=1139.7964, acc=0.2095
+[ 2022-07-06 16:19:32,561][train.train_nn_models] [Training] Epoch=38, loss=1141.1748, nll=1141.1748, l2_reg=0.0000, acc=0.2080
+[ 2022-07-06 16:19:32,564][train.train_nn_models] [Validation] Epoch=38, nll=1135.9857, acc=0.2106
+[ 2022-07-06 16:19:40,627][train.train_nn_models] [Training] Epoch=39, loss=1137.5006, nll=1137.5006, l2_reg=0.0000, acc=0.2089
+[ 2022-07-06 16:19:40,631][train.train_nn_models] [Validation] Epoch=39, nll=1132.4526, acc=0.2119
+[ 2022-07-06 16:19:47,132][train.train_nn_models] [Training] Epoch=40, loss=1134.0900, nll=1134.0900, l2_reg=0.0000, acc=0.2096
+[ 2022-07-06 16:19:47,153][train.train_nn_models] [Validation] Epoch=40, nll=1129.1903, acc=0.2129
+[ 2022-07-06 16:19:52,973][train.train_nn_models] [Training] Epoch=41, loss=1130.9323, nll=1130.9323, l2_reg=0.0000, acc=0.2101
+[ 2022-07-06 16:19:52,977][train.train_nn_models] [Validation] Epoch=41, nll=1126.1754, acc=0.2147
+[ 2022-07-06 16:19:58,429][train.train_nn_models] [Training] Epoch=42, loss=1128.0015, nll=1128.0015, l2_reg=0.0000, acc=0.2107
+[ 2022-07-06 16:19:58,432][train.train_nn_models] [Validation] Epoch=42, nll=1123.3810, acc=0.2151
+[ 2022-07-06 16:20:02,351][train.train_nn_models] [Training] Epoch=43, loss=1125.2731, nll=1125.2731, l2_reg=0.0000, acc=0.2113
+[ 2022-07-06 16:20:02,354][train.train_nn_models] [Validation] Epoch=43, nll=1120.7817, acc=0.2156
+[ 2022-07-06 16:20:06,389][train.train_nn_models] [Training] Epoch=44, loss=1122.7271, nll=1122.7271, l2_reg=0.0000, acc=0.2119
+[ 2022-07-06 16:20:06,392][train.train_nn_models] [Validation] Epoch=44, nll=1118.3506, acc=0.2166
+[ 2022-07-06 16:20:10,322][train.train_nn_models] [Training] Epoch=45, loss=1120.3234, nll=1120.3234, l2_reg=0.0000, acc=0.2123
+[ 2022-07-06 16:20:10,325][train.train_nn_models] [Validation] Epoch=45, nll=1116.0731, acc=0.2167
+[ 2022-07-06 16:20:15,901][train.train_nn_models] [Training] Epoch=46, loss=1118.0295, nll=1118.0295, l2_reg=0.0000, acc=0.2130
+[ 2022-07-06 16:20:15,903][train.train_nn_models] [Validation] Epoch=46, nll=1113.9386, acc=0.2176
+[ 2022-07-06 16:20:21,025][train.train_nn_models] [Training] Epoch=47, loss=1115.8206, nll=1115.8206, l2_reg=0.0000, acc=0.2137
+[ 2022-07-06 16:20:21,028][train.train_nn_models] [Validation] Epoch=47, nll=1111.8918, acc=0.2189
+[ 2022-07-06 16:20:26,519][train.train_nn_models] [Training] Epoch=48, loss=1113.6942, nll=1113.6942, l2_reg=0.0000, acc=0.2146
+[ 2022-07-06 16:20:26,523][train.train_nn_models] [Validation] Epoch=48, nll=1109.8887, acc=0.2192
+[ 2022-07-06 16:20:31,172][train.train_nn_models] [Training] Epoch=49, loss=1111.6550, nll=1111.6550, l2_reg=0.0000, acc=0.2157
+[ 2022-07-06 16:20:31,173][train.train_nn_models] [Validation] Epoch=49, nll=1107.9639, acc=0.2204
+[ 2022-07-06 16:20:36,244][train.train_nn_models] [Training] Epoch=50, loss=1109.6997, nll=1109.6997, l2_reg=0.0000, acc=0.2170
+[ 2022-07-06 16:20:36,247][train.train_nn_models] [Validation] Epoch=50, nll=1106.1194, acc=0.2207
+[ 2022-07-06 16:20:40,154][train.train_nn_models] [Training] Epoch=51, loss=1107.8230, nll=1107.8230, l2_reg=0.0000, acc=0.2184
+[ 2022-07-06 16:20:40,176][train.train_nn_models] [Validation] Epoch=51, nll=1104.3636, acc=0.2220
+[ 2022-07-06 16:20:44,560][train.train_nn_models] [Training] Epoch=52, loss=1106.0236, nll=1106.0236, l2_reg=0.0000, acc=0.2197
+[ 2022-07-06 16:20:44,563][train.train_nn_models] [Validation] Epoch=52, nll=1102.6941, acc=0.2242
+[ 2022-07-06 16:20:49,915][train.train_nn_models] [Training] Epoch=53, loss=1104.3020, nll=1104.3020, l2_reg=0.0000, acc=0.2206
+[ 2022-07-06 16:20:49,918][train.train_nn_models] [Validation] Epoch=53, nll=1101.1193, acc=0.2249
+[ 2022-07-06 16:20:54,600][train.train_nn_models] [Training] Epoch=54, loss=1102.6647, nll=1102.6647, l2_reg=0.0000, acc=0.2220
+[ 2022-07-06 16:20:54,603][train.train_nn_models] [Validation] Epoch=54, nll=1099.6287, acc=0.2260
+[ 2022-07-06 16:20:59,477][train.train_nn_models] [Training] Epoch=55, loss=1101.1169, nll=1101.1169, l2_reg=0.0000, acc=0.2233
+[ 2022-07-06 16:20:59,561][train.train_nn_models] [Validation] Epoch=55, nll=1098.2137, acc=0.2280
+[ 2022-07-06 16:21:05,648][train.train_nn_models] [Training] Epoch=56, loss=1099.6370, nll=1099.6370, l2_reg=0.0000, acc=0.2244
+[ 2022-07-06 16:21:05,652][train.train_nn_models] [Validation] Epoch=56, nll=1096.8298, acc=0.2286
+[ 2022-07-06 16:21:11,480][train.train_nn_models] [Training] Epoch=57, loss=1098.2513, nll=1098.2513, l2_reg=0.0000, acc=0.2256
+[ 2022-07-06 16:21:11,483][train.train_nn_models] [Validation] Epoch=57, nll=1095.6656, acc=0.2293
+[ 2022-07-06 16:21:16,526][train.train_nn_models] [Training] Epoch=58, loss=1097.0350, nll=1097.0350, l2_reg=0.0000, acc=0.2277
+[ 2022-07-06 16:21:16,529][train.train_nn_models] [Validation] Epoch=58, nll=1094.4819, acc=0.2325
+[ 2022-07-06 16:21:20,872][train.train_nn_models] [Training] Epoch=59, loss=1095.8590, nll=1095.8590, l2_reg=0.0000, acc=0.2292
+[ 2022-07-06 16:21:20,875][train.train_nn_models] [Validation] Epoch=59, nll=1093.4347, acc=0.2335
+[ 2022-07-06 16:21:27,246][train.train_nn_models] [Training] Epoch=60, loss=1094.6830, nll=1094.6830, l2_reg=0.0000, acc=0.2314
+[ 2022-07-06 16:21:27,249][train.train_nn_models] [Validation] Epoch=60, nll=1092.4574, acc=0.2350
+[ 2022-07-06 16:21:32,745][train.train_nn_models] [Training] Epoch=61, loss=1093.6149, nll=1093.6149, l2_reg=0.0000, acc=0.2335
+[ 2022-07-06 16:21:32,748][train.train_nn_models] [Validation] Epoch=61, nll=1091.5225, acc=0.2362
+[ 2022-07-06 16:21:36,915][train.train_nn_models] [Training] Epoch=62, loss=1092.5972, nll=1092.5972, l2_reg=0.0000, acc=0.2358
+[ 2022-07-06 16:21:36,918][train.train_nn_models] [Validation] Epoch=62, nll=1090.6688, acc=0.2389
+[ 2022-07-06 16:21:42,295][train.train_nn_models] [Training] Epoch=63, loss=1091.6409, nll=1091.6409, l2_reg=0.0000, acc=0.2382
+[ 2022-07-06 16:21:42,298][train.train_nn_models] [Validation] Epoch=63, nll=1089.8783, acc=0.2398
+[ 2022-07-06 16:21:46,433][train.train_nn_models] [Training] Epoch=64, loss=1090.7660, nll=1090.7660, l2_reg=0.0000, acc=0.2394
+[ 2022-07-06 16:21:46,437][train.train_nn_models] [Validation] Epoch=64, nll=1089.1483, acc=0.2397
+[ 2022-07-06 16:21:53,025][train.train_nn_models] [Training] Epoch=65, loss=1089.9536, nll=1089.9536, l2_reg=0.0000, acc=0.2403
+[ 2022-07-06 16:21:53,028][train.train_nn_models] [Validation] Epoch=65, nll=1088.4758, acc=0.2406
+[ 2022-07-06 16:21:57,697][train.train_nn_models] [Training] Epoch=66, loss=1089.1990, nll=1089.1990, l2_reg=0.0000, acc=0.2413
+[ 2022-07-06 16:21:57,701][train.train_nn_models] [Validation] Epoch=66, nll=1087.8552, acc=0.2416
+[ 2022-07-06 16:22:02,791][train.train_nn_models] [Training] Epoch=67, loss=1088.5001, nll=1088.5001, l2_reg=0.0000, acc=0.2424
+[ 2022-07-06 16:22:02,794][train.train_nn_models] [Validation] Epoch=67, nll=1087.2860, acc=0.2426
+[ 2022-07-06 16:22:07,494][train.train_nn_models] [Training] Epoch=68, loss=1087.8519, nll=1087.8519, l2_reg=0.0000, acc=0.2435
+[ 2022-07-06 16:22:07,497][train.train_nn_models] [Validation] Epoch=68, nll=1086.7589, acc=0.2430
+[ 2022-07-06 16:22:12,955][train.train_nn_models] [Training] Epoch=69, loss=1087.2504, nll=1087.2504, l2_reg=0.0000, acc=0.2442
+[ 2022-07-06 16:22:12,958][train.train_nn_models] [Validation] Epoch=69, nll=1086.2670, acc=0.2441
+[ 2022-07-06 16:22:16,988][train.train_nn_models] [Training] Epoch=70, loss=1086.6792, nll=1086.6792, l2_reg=0.0000, acc=0.2450
+[ 2022-07-06 16:22:16,991][train.train_nn_models] [Validation] Epoch=70, nll=1085.7754, acc=0.2443
+[ 2022-07-06 16:22:21,117][train.train_nn_models] [Training] Epoch=71, loss=1086.1442, nll=1086.1442, l2_reg=0.0000, acc=0.2454
+[ 2022-07-06 16:22:21,119][train.train_nn_models] [Validation] Epoch=71, nll=1085.3385, acc=0.2444
+[ 2022-07-06 16:22:26,023][train.train_nn_models] [Training] Epoch=72, loss=1085.6573, nll=1085.6573, l2_reg=0.0000, acc=0.2460
+[ 2022-07-06 16:22:26,025][train.train_nn_models] [Validation] Epoch=72, nll=1084.9443, acc=0.2450
+[ 2022-07-06 16:22:31,230][train.train_nn_models] [Training] Epoch=73, loss=1085.1998, nll=1085.1998, l2_reg=0.0000, acc=0.2465
+[ 2022-07-06 16:22:31,233][train.train_nn_models] [Validation] Epoch=73, nll=1084.5569, acc=0.2453
+[ 2022-07-06 16:22:36,181][train.train_nn_models] [Training] Epoch=74, loss=1084.7578, nll=1084.7578, l2_reg=0.0000, acc=0.2472
+[ 2022-07-06 16:22:36,184][train.train_nn_models] [Validation] Epoch=74, nll=1084.1830, acc=0.2464
+[ 2022-07-06 16:22:40,910][train.train_nn_models] [Training] Epoch=75, loss=1084.3362, nll=1084.3362, l2_reg=0.0000, acc=0.2475
+[ 2022-07-06 16:22:40,913][train.train_nn_models] [Validation] Epoch=75, nll=1083.8173, acc=0.2473
+[ 2022-07-06 16:22:45,637][train.train_nn_models] [Training] Epoch=76, loss=1083.9344, nll=1083.9344, l2_reg=0.0000, acc=0.2479
+[ 2022-07-06 16:22:45,639][train.train_nn_models] [Validation] Epoch=76, nll=1083.4688, acc=0.2482
+[ 2022-07-06 16:22:51,610][train.train_nn_models] [Training] Epoch=77, loss=1083.5470, nll=1083.5470, l2_reg=0.0000, acc=0.2483
+[ 2022-07-06 16:22:51,614][train.train_nn_models] [Validation] Epoch=77, nll=1083.1307, acc=0.2495
+[ 2022-07-06 16:22:58,038][train.train_nn_models] [Training] Epoch=78, loss=1083.1704, nll=1083.1704, l2_reg=0.0000, acc=0.2487
+[ 2022-07-06 16:22:58,052][train.train_nn_models] [Validation] Epoch=78, nll=1082.8026, acc=0.2503
+[ 2022-07-06 16:23:02,840][train.train_nn_models] [Training] Epoch=79, loss=1082.8066, nll=1082.8066, l2_reg=0.0000, acc=0.2488
+[ 2022-07-06 16:23:02,842][train.train_nn_models] [Validation] Epoch=79, nll=1082.4812, acc=0.2508
+[ 2022-07-06 16:23:08,155][train.train_nn_models] [Training] Epoch=80, loss=1082.4550, nll=1082.4550, l2_reg=0.0000, acc=0.2494
+[ 2022-07-06 16:23:08,159][train.train_nn_models] [Validation] Epoch=80, nll=1082.1675, acc=0.2513
+[ 2022-07-06 16:23:13,055][train.train_nn_models] [Training] Epoch=81, loss=1082.1138, nll=1082.1138, l2_reg=0.0000, acc=0.2501
+[ 2022-07-06 16:23:13,058][train.train_nn_models] [Validation] Epoch=81, nll=1081.8657, acc=0.2511
+[ 2022-07-06 16:23:17,848][train.train_nn_models] [Training] Epoch=82, loss=1081.7894, nll=1081.7894, l2_reg=0.0000, acc=0.2506
+[ 2022-07-06 16:23:17,848][train.train_nn_models] [Validation] Epoch=82, nll=1081.5682, acc=0.2511
+[ 2022-07-06 16:23:23,748][train.train_nn_models] [Training] Epoch=83, loss=1081.4750, nll=1081.4750, l2_reg=0.0000, acc=0.2510
+[ 2022-07-06 16:23:23,751][train.train_nn_models] [Validation] Epoch=83, nll=1081.2782, acc=0.2515
+[ 2022-07-06 16:23:28,663][train.train_nn_models] [Training] Epoch=84, loss=1081.1694, nll=1081.1694, l2_reg=0.0000, acc=0.2513
+[ 2022-07-06 16:23:28,669][train.train_nn_models] [Validation] Epoch=84, nll=1081.0001, acc=0.2521
+[ 2022-07-06 16:23:34,602][train.train_nn_models] [Training] Epoch=85, loss=1080.8777, nll=1080.8777, l2_reg=0.0000, acc=0.2517
+[ 2022-07-06 16:23:34,605][train.train_nn_models] [Validation] Epoch=85, nll=1080.7299, acc=0.2523
+[ 2022-07-06 16:23:40,848][train.train_nn_models] [Training] Epoch=86, loss=1080.5957, nll=1080.5957, l2_reg=0.0000, acc=0.2520
+[ 2022-07-06 16:23:40,849][train.train_nn_models] [Validation] Epoch=86, nll=1080.4689, acc=0.2524
+[ 2022-07-06 16:23:45,993][train.train_nn_models] [Training] Epoch=87, loss=1080.3210, nll=1080.3210, l2_reg=0.0000, acc=0.2523
+[ 2022-07-06 16:23:45,995][train.train_nn_models] [Validation] Epoch=87, nll=1080.2164, acc=0.2523
+[ 2022-07-06 16:23:51,858][train.train_nn_models] [Training] Epoch=88, loss=1080.0522, nll=1080.0522, l2_reg=0.0000, acc=0.2526
+[ 2022-07-06 16:23:51,862][train.train_nn_models] [Validation] Epoch=88, nll=1079.9708, acc=0.2525
+[ 2022-07-06 16:23:57,282][train.train_nn_models] [Training] Epoch=89, loss=1079.7946, nll=1079.7946, l2_reg=0.0000, acc=0.2529
+[ 2022-07-06 16:23:57,285][train.train_nn_models] [Validation] Epoch=89, nll=1079.7300, acc=0.2525
+[ 2022-07-06 16:24:01,687][train.train_nn_models] [Training] Epoch=90, loss=1079.5502, nll=1079.5502, l2_reg=0.0000, acc=0.2531
+[ 2022-07-06 16:24:01,689][train.train_nn_models] [Validation] Epoch=90, nll=1079.4940, acc=0.2530
+[ 2022-07-06 16:24:06,643][train.train_nn_models] [Training] Epoch=91, loss=1079.3101, nll=1079.3101, l2_reg=0.0000, acc=0.2533
+[ 2022-07-06 16:24:06,646][train.train_nn_models] [Validation] Epoch=91, nll=1079.2689, acc=0.2537
+[ 2022-07-06 16:24:11,513][train.train_nn_models] [Training] Epoch=92, loss=1079.0721, nll=1079.0721, l2_reg=0.0000, acc=0.2533
+[ 2022-07-06 16:24:11,516][train.train_nn_models] [Validation] Epoch=92, nll=1079.0702, acc=0.2540
+[ 2022-07-06 16:24:15,747][train.train_nn_models] [Training] Epoch=93, loss=1078.8610, nll=1078.8610, l2_reg=0.0000, acc=0.2535
+[ 2022-07-06 16:24:15,749][train.train_nn_models] [Validation] Epoch=93, nll=1078.8889, acc=0.2543
+[ 2022-07-06 16:24:20,953][train.train_nn_models] [Training] Epoch=94, loss=1078.6647, nll=1078.6647, l2_reg=0.0000, acc=0.2539
+[ 2022-07-06 16:24:20,956][train.train_nn_models] [Validation] Epoch=94, nll=1078.7133, acc=0.2541
+[ 2022-07-06 16:24:24,817][train.train_nn_models] [Training] Epoch=95, loss=1078.4724, nll=1078.4724, l2_reg=0.0000, acc=0.2540
+[ 2022-07-06 16:24:24,820][train.train_nn_models] [Validation] Epoch=95, nll=1078.5497, acc=0.2542
+[ 2022-07-06 16:24:30,625][train.train_nn_models] [Training] Epoch=96, loss=1078.2920, nll=1078.2920, l2_reg=0.0000, acc=0.2541
+[ 2022-07-06 16:24:30,628][train.train_nn_models] [Validation] Epoch=96, nll=1078.3973, acc=0.2540
+[ 2022-07-06 16:24:36,400][train.train_nn_models] [Training] Epoch=97, loss=1078.1194, nll=1078.1194, l2_reg=0.0000, acc=0.2542
+[ 2022-07-06 16:24:36,402][train.train_nn_models] [Validation] Epoch=97, nll=1078.2477, acc=0.2543
+[ 2022-07-06 16:24:42,357][train.train_nn_models] [Training] Epoch=98, loss=1077.9564, nll=1077.9564, l2_reg=0.0000, acc=0.2543
+[ 2022-07-06 16:24:42,361][train.train_nn_models] [Validation] Epoch=98, nll=1078.1062, acc=0.2546
+[ 2022-07-06 16:24:49,157][train.train_nn_models] [Training] Epoch=99, loss=1077.7999, nll=1077.7999, l2_reg=0.0000, acc=0.2544
+[ 2022-07-06 16:24:49,170][train.train_nn_models] [Validation] Epoch=99, nll=1077.9689, acc=0.2549
+[ 2022-07-06 16:24:53,257][train.train_nn_models] [Training] Epoch=100, loss=1077.6493, nll=1077.6493, l2_reg=0.0000, acc=0.2545
+[ 2022-07-06 16:24:53,259][train.train_nn_models] [Validation] Epoch=100, nll=1077.8394, acc=0.2551
+[ 2022-07-06 16:24:57,141][train.train_nn_models] [Training] Epoch=101, loss=1077.5038, nll=1077.5038, l2_reg=0.0000, acc=0.2546
+[ 2022-07-06 16:24:57,144][train.train_nn_models] [Validation] Epoch=101, nll=1077.7167, acc=0.2552
+[ 2022-07-06 16:24:57,150][train.train_nn_models] Found a better model at epoch 101.
+[ 2022-07-06 16:25:03,991][train.train_nn_models] [Training] Epoch=102, loss=1077.3667, nll=1077.3667, l2_reg=0.0000, acc=0.2548
+[ 2022-07-06 16:25:03,994][train.train_nn_models] [Validation] Epoch=102, nll=1077.6019, acc=0.2553
+[ 2022-07-06 16:25:03,996][train.train_nn_models] Found a better model at epoch 102.
+[ 2022-07-06 16:25:08,899][train.train_nn_models] [Training] Epoch=103, loss=1077.2358, nll=1077.2358, l2_reg=0.0000, acc=0.2548
+[ 2022-07-06 16:25:08,902][train.train_nn_models] [Validation] Epoch=103, nll=1077.4917, acc=0.2554
+[ 2022-07-06 16:25:08,905][train.train_nn_models] Found a better model at epoch 103.
+[ 2022-07-06 16:25:13,540][train.train_nn_models] [Training] Epoch=104, loss=1077.1101, nll=1077.1101, l2_reg=0.0000, acc=0.2551
+[ 2022-07-06 16:25:13,543][train.train_nn_models] [Validation] Epoch=104, nll=1077.3878, acc=0.2555
+[ 2022-07-06 16:25:13,546][train.train_nn_models] Found a better model at epoch 104.
+[ 2022-07-06 16:25:18,848][train.train_nn_models] [Training] Epoch=105, loss=1076.9899, nll=1076.9899, l2_reg=0.0000, acc=0.2553
+[ 2022-07-06 16:25:18,851][train.train_nn_models] [Validation] Epoch=105, nll=1077.2920, acc=0.2558
+[ 2022-07-06 16:25:18,854][train.train_nn_models] Found a better model at epoch 105.
+[ 2022-07-06 16:25:23,285][train.train_nn_models] [Training] Epoch=106, loss=1076.8757, nll=1076.8757, l2_reg=0.0000, acc=0.2554
+[ 2022-07-06 16:25:23,288][train.train_nn_models] [Validation] Epoch=106, nll=1077.1982, acc=0.2556
+[ 2022-07-06 16:25:23,292][train.train_nn_models] Found a better model at epoch 106.
+[ 2022-07-06 16:25:29,322][train.train_nn_models] [Training] Epoch=107, loss=1076.7640, nll=1076.7640, l2_reg=0.0000, acc=0.2555
+[ 2022-07-06 16:25:29,325][train.train_nn_models] [Validation] Epoch=107, nll=1077.1079, acc=0.2554
+[ 2022-07-06 16:25:29,328][train.train_nn_models] Found a better model at epoch 107.
+[ 2022-07-06 16:25:35,133][train.train_nn_models] [Training] Epoch=108, loss=1076.6571, nll=1076.6571, l2_reg=0.0000, acc=0.2555
+[ 2022-07-06 16:25:35,136][train.train_nn_models] [Validation] Epoch=108, nll=1077.0204, acc=0.2558
+[ 2022-07-06 16:25:35,139][train.train_nn_models] Found a better model at epoch 108.
+[ 2022-07-06 16:25:41,330][train.train_nn_models] [Training] Epoch=109, loss=1076.5532, nll=1076.5532, l2_reg=0.0000, acc=0.2557
+[ 2022-07-06 16:25:41,333][train.train_nn_models] [Validation] Epoch=109, nll=1076.9376, acc=0.2560
+[ 2022-07-06 16:25:41,336][train.train_nn_models] Found a better model at epoch 109.
+[ 2022-07-06 16:25:45,336][train.train_nn_models] [Training] Epoch=110, loss=1076.4532, nll=1076.4532, l2_reg=0.0000, acc=0.2559
+[ 2022-07-06 16:25:45,339][train.train_nn_models] [Validation] Epoch=110, nll=1076.8589, acc=0.2560
+[ 2022-07-06 16:25:45,342][train.train_nn_models] Found a better model at epoch 110.
+[ 2022-07-06 16:25:50,277][train.train_nn_models] [Training] Epoch=111, loss=1076.3564, nll=1076.3564, l2_reg=0.0000, acc=0.2559
+[ 2022-07-06 16:25:50,280][train.train_nn_models] [Validation] Epoch=111, nll=1076.7805, acc=0.2559
+[ 2022-07-06 16:25:50,283][train.train_nn_models] Found a better model at epoch 111.
+[ 2022-07-06 16:25:56,807][train.train_nn_models] [Training] Epoch=112, loss=1076.2620, nll=1076.2620, l2_reg=0.0000, acc=0.2561
+[ 2022-07-06 16:25:56,809][train.train_nn_models] [Validation] Epoch=112, nll=1076.7072, acc=0.2559
+[ 2022-07-06 16:25:56,812][train.train_nn_models] Found a better model at epoch 112.
+[ 2022-07-06 16:26:02,369][train.train_nn_models] [Training] Epoch=113, loss=1076.1720, nll=1076.1720, l2_reg=0.0000, acc=0.2561
+[ 2022-07-06 16:26:02,371][train.train_nn_models] [Validation] Epoch=113, nll=1076.6338, acc=0.2560
+[ 2022-07-06 16:26:02,374][train.train_nn_models] Found a better model at epoch 113.
+[ 2022-07-06 16:26:06,281][train.train_nn_models] [Training] Epoch=114, loss=1076.0840, nll=1076.0840, l2_reg=0.0000, acc=0.2561
+[ 2022-07-06 16:26:06,284][train.train_nn_models] [Validation] Epoch=114, nll=1076.5635, acc=0.2565
+[ 2022-07-06 16:26:06,287][train.train_nn_models] Found a better model at epoch 114.
+[ 2022-07-06 16:26:10,748][train.train_nn_models] [Training] Epoch=115, loss=1075.9967, nll=1075.9967, l2_reg=0.0000, acc=0.2562
+[ 2022-07-06 16:26:10,750][train.train_nn_models] [Validation] Epoch=115, nll=1076.4933, acc=0.2566
+[ 2022-07-06 16:26:10,753][train.train_nn_models] Found a better model at epoch 115.
+[ 2022-07-06 16:26:14,711][train.train_nn_models] [Training] Epoch=116, loss=1075.9121, nll=1075.9121, l2_reg=0.0000, acc=0.2562
+[ 2022-07-06 16:26:14,714][train.train_nn_models] [Validation] Epoch=116, nll=1076.4268, acc=0.2563
+[ 2022-07-06 16:26:14,717][train.train_nn_models] Found a better model at epoch 116.
+[ 2022-07-06 16:26:18,477][train.train_nn_models] [Training] Epoch=117, loss=1075.8303, nll=1075.8303, l2_reg=0.0000, acc=0.2564
+[ 2022-07-06 16:26:18,479][train.train_nn_models] [Validation] Epoch=117, nll=1076.3638, acc=0.2562
+[ 2022-07-06 16:26:18,482][train.train_nn_models] Found a better model at epoch 117.
+[ 2022-07-06 16:26:24,310][train.train_nn_models] [Training] Epoch=118, loss=1075.7521, nll=1075.7521, l2_reg=0.0000, acc=0.2565
+[ 2022-07-06 16:26:24,313][train.train_nn_models] [Validation] Epoch=118, nll=1076.2981, acc=0.2564
+[ 2022-07-06 16:26:24,315][train.train_nn_models] Found a better model at epoch 118.
+[ 2022-07-06 16:26:28,204][train.train_nn_models] [Training] Epoch=119, loss=1075.6721, nll=1075.6721, l2_reg=0.0000, acc=0.2566
+[ 2022-07-06 16:26:28,207][train.train_nn_models] [Validation] Epoch=119, nll=1076.2345, acc=0.2560
+[ 2022-07-06 16:26:28,210][train.train_nn_models] Found a better model at epoch 119.
+[ 2022-07-06 16:26:32,231][train.train_nn_models] [Training] Epoch=120, loss=1075.5950, nll=1075.5950, l2_reg=0.0000, acc=0.2568
+[ 2022-07-06 16:26:32,234][train.train_nn_models] [Validation] Epoch=120, nll=1076.1702, acc=0.2560
+[ 2022-07-06 16:26:32,237][train.train_nn_models] Found a better model at epoch 120.
+[ 2022-07-06 16:26:37,009][train.train_nn_models] [Training] Epoch=121, loss=1075.5193, nll=1075.5193, l2_reg=0.0000, acc=0.2568
+[ 2022-07-06 16:26:37,012][train.train_nn_models] [Validation] Epoch=121, nll=1076.1080, acc=0.2560
+[ 2022-07-06 16:26:37,015][train.train_nn_models] Found a better model at epoch 121.
+[ 2022-07-06 16:26:41,292][train.train_nn_models] [Training] Epoch=122, loss=1075.4462, nll=1075.4462, l2_reg=0.0000, acc=0.2568
+[ 2022-07-06 16:26:41,295][train.train_nn_models] [Validation] Epoch=122, nll=1076.0500, acc=0.2561
+[ 2022-07-06 16:26:41,298][train.train_nn_models] Found a better model at epoch 122.
+[ 2022-07-06 16:26:46,562][train.train_nn_models] [Training] Epoch=123, loss=1075.3757, nll=1075.3757, l2_reg=0.0000, acc=0.2569
+[ 2022-07-06 16:26:46,565][train.train_nn_models] [Validation] Epoch=123, nll=1075.9877, acc=0.2560
+[ 2022-07-06 16:26:46,567][train.train_nn_models] Found a better model at epoch 123.
+[ 2022-07-06 16:26:53,231][train.train_nn_models] [Training] Epoch=124, loss=1075.3036, nll=1075.3036, l2_reg=0.0000, acc=0.2570
+[ 2022-07-06 16:26:53,235][train.train_nn_models] [Validation] Epoch=124, nll=1075.9268, acc=0.2560
+[ 2022-07-06 16:26:53,237][train.train_nn_models] Found a better model at epoch 124.
+[ 2022-07-06 16:27:00,097][train.train_nn_models] [Training] Epoch=125, loss=1075.2340, nll=1075.2340, l2_reg=0.0000, acc=0.2570
+[ 2022-07-06 16:27:00,099][train.train_nn_models] [Validation] Epoch=125, nll=1075.8693, acc=0.2560
+[ 2022-07-06 16:27:00,108][train.train_nn_models] Found a better model at epoch 125.
+[ 2022-07-06 16:27:04,906][train.train_nn_models] [Training] Epoch=126, loss=1075.1663, nll=1075.1663, l2_reg=0.0000, acc=0.2571
+[ 2022-07-06 16:27:04,909][train.train_nn_models] [Validation] Epoch=126, nll=1075.8154, acc=0.2558
+[ 2022-07-06 16:27:04,912][train.train_nn_models] Found a better model at epoch 126.
+[ 2022-07-06 16:27:10,407][train.train_nn_models] [Training] Epoch=127, loss=1075.1006, nll=1075.1006, l2_reg=0.0000, acc=0.2571
+[ 2022-07-06 16:27:10,410][train.train_nn_models] [Validation] Epoch=127, nll=1075.7633, acc=0.2561
+[ 2022-07-06 16:27:10,413][train.train_nn_models] Found a better model at epoch 127.
+[ 2022-07-06 16:27:14,781][train.train_nn_models] [Training] Epoch=128, loss=1075.0361, nll=1075.0361, l2_reg=0.0000, acc=0.2571
+[ 2022-07-06 16:27:14,785][train.train_nn_models] [Validation] Epoch=128, nll=1075.7107, acc=0.2560
+[ 2022-07-06 16:27:14,787][train.train_nn_models] Found a better model at epoch 128.
+[ 2022-07-06 16:27:19,429][train.train_nn_models] [Training] Epoch=129, loss=1074.9724, nll=1074.9724, l2_reg=0.0000, acc=0.2572
+[ 2022-07-06 16:27:19,431][train.train_nn_models] [Validation] Epoch=129, nll=1075.6604, acc=0.2561
+[ 2022-07-06 16:27:19,434][train.train_nn_models] Found a better model at epoch 129.
+[ 2022-07-06 16:27:24,521][train.train_nn_models] [Training] Epoch=130, loss=1074.9099, nll=1074.9099, l2_reg=0.0000, acc=0.2572
+[ 2022-07-06 16:27:24,524][train.train_nn_models] [Validation] Epoch=130, nll=1075.6095, acc=0.2561
+[ 2022-07-06 16:27:24,527][train.train_nn_models] Found a better model at epoch 130.
+[ 2022-07-06 16:27:29,255][train.train_nn_models] [Training] Epoch=131, loss=1074.8484, nll=1074.8484, l2_reg=0.0000, acc=0.2572
+[ 2022-07-06 16:27:29,258][train.train_nn_models] [Validation] Epoch=131, nll=1075.5614, acc=0.2564
+[ 2022-07-06 16:27:29,261][train.train_nn_models] Found a better model at epoch 131.
+[ 2022-07-06 16:27:35,880][train.train_nn_models] [Training] Epoch=132, loss=1074.7877, nll=1074.7877, l2_reg=0.0000, acc=0.2574
+[ 2022-07-06 16:27:35,883][train.train_nn_models] [Validation] Epoch=132, nll=1075.5123, acc=0.2565
+[ 2022-07-06 16:27:35,886][train.train_nn_models] Found a better model at epoch 132.
+[ 2022-07-06 16:27:40,773][train.train_nn_models] [Training] Epoch=133, loss=1074.7273, nll=1074.7273, l2_reg=0.0000, acc=0.2573
+[ 2022-07-06 16:27:40,812][train.train_nn_models] [Validation] Epoch=133, nll=1075.4639, acc=0.2563
+[ 2022-07-06 16:27:40,815][train.train_nn_models] Found a better model at epoch 133.
+[ 2022-07-06 16:27:44,916][train.train_nn_models] [Training] Epoch=134, loss=1074.6677, nll=1074.6677, l2_reg=0.0000, acc=0.2573
+[ 2022-07-06 16:27:44,918][train.train_nn_models] [Validation] Epoch=134, nll=1075.4167, acc=0.2564
+[ 2022-07-06 16:27:44,921][train.train_nn_models] Found a better model at epoch 134.
+[ 2022-07-06 16:27:49,030][train.train_nn_models] [Training] Epoch=135, loss=1074.6102, nll=1074.6102, l2_reg=0.0000, acc=0.2574
+[ 2022-07-06 16:27:49,033][train.train_nn_models] [Validation] Epoch=135, nll=1075.3682, acc=0.2563
+[ 2022-07-06 16:27:49,036][train.train_nn_models] Found a better model at epoch 135.
+[ 2022-07-06 16:27:54,038][train.train_nn_models] [Training] Epoch=136, loss=1074.5516, nll=1074.5516, l2_reg=0.0000, acc=0.2575
+[ 2022-07-06 16:27:54,041][train.train_nn_models] [Validation] Epoch=136, nll=1075.3198, acc=0.2563
+[ 2022-07-06 16:27:54,043][train.train_nn_models] Found a better model at epoch 136.
+[ 2022-07-06 16:27:58,250][train.train_nn_models] [Training] Epoch=137, loss=1074.4933, nll=1074.4933, l2_reg=0.0000, acc=0.2576
+[ 2022-07-06 16:27:58,252][train.train_nn_models] [Validation] Epoch=137, nll=1075.2700, acc=0.2562
+[ 2022-07-06 16:27:58,255][train.train_nn_models] Found a better model at epoch 137.
+[ 2022-07-06 16:28:03,312][train.train_nn_models] [Training] Epoch=138, loss=1074.4352, nll=1074.4352, l2_reg=0.0000, acc=0.2577
+[ 2022-07-06 16:28:03,315][train.train_nn_models] [Validation] Epoch=138, nll=1075.2252, acc=0.2563
+[ 2022-07-06 16:28:03,318][train.train_nn_models] Found a better model at epoch 138.
+[ 2022-07-06 16:28:07,594][train.train_nn_models] [Training] Epoch=139, loss=1074.3787, nll=1074.3787, l2_reg=0.0000, acc=0.2576
+[ 2022-07-06 16:28:07,597][train.train_nn_models] [Validation] Epoch=139, nll=1075.1772, acc=0.2560
+[ 2022-07-06 16:28:07,600][train.train_nn_models] Found a better model at epoch 139.
+[ 2022-07-06 16:28:12,522][train.train_nn_models] [Training] Epoch=140, loss=1074.3228, nll=1074.3228, l2_reg=0.0000, acc=0.2577
+[ 2022-07-06 16:28:12,525][train.train_nn_models] [Validation] Epoch=140, nll=1075.1311, acc=0.2563
+[ 2022-07-06 16:28:12,528][train.train_nn_models] Found a better model at epoch 140.
+[ 2022-07-06 16:28:16,563][train.train_nn_models] [Training] Epoch=141, loss=1074.2676, nll=1074.2676, l2_reg=0.0000, acc=0.2577
+[ 2022-07-06 16:28:16,566][train.train_nn_models] [Validation] Epoch=141, nll=1075.0854, acc=0.2560
+[ 2022-07-06 16:28:16,569][train.train_nn_models] Found a better model at epoch 141.
+[ 2022-07-06 16:28:21,410][train.train_nn_models] [Training] Epoch=142, loss=1074.2133, nll=1074.2133, l2_reg=0.0000, acc=0.2579
+[ 2022-07-06 16:28:21,412][train.train_nn_models] [Validation] Epoch=142, nll=1075.0409, acc=0.2562
+[ 2022-07-06 16:28:21,415][train.train_nn_models] Found a better model at epoch 142.
+[ 2022-07-06 16:28:25,298][train.train_nn_models] [Training] Epoch=143, loss=1074.1589, nll=1074.1589, l2_reg=0.0000, acc=0.2578
+[ 2022-07-06 16:28:25,301][train.train_nn_models] [Validation] Epoch=143, nll=1074.9950, acc=0.2562
+[ 2022-07-06 16:28:25,303][train.train_nn_models] Found a better model at epoch 143.
+[ 2022-07-06 16:28:29,341][train.train_nn_models] [Training] Epoch=144, loss=1074.1049, nll=1074.1049, l2_reg=0.0000, acc=0.2579
+[ 2022-07-06 16:28:29,344][train.train_nn_models] [Validation] Epoch=144, nll=1074.9485, acc=0.2564
+[ 2022-07-06 16:28:29,347][train.train_nn_models] Found a better model at epoch 144.
+[ 2022-07-06 16:28:33,303][train.train_nn_models] [Training] Epoch=145, loss=1074.0515, nll=1074.0515, l2_reg=0.0000, acc=0.2579
+[ 2022-07-06 16:28:33,306][train.train_nn_models] [Validation] Epoch=145, nll=1074.9047, acc=0.2564
+[ 2022-07-06 16:28:33,309][train.train_nn_models] Found a better model at epoch 145.
+[ 2022-07-06 16:28:38,370][train.train_nn_models] [Training] Epoch=146, loss=1073.9988, nll=1073.9988, l2_reg=0.0000, acc=0.2580
+[ 2022-07-06 16:28:38,373][train.train_nn_models] [Validation] Epoch=146, nll=1074.8628, acc=0.2565
+[ 2022-07-06 16:28:38,376][train.train_nn_models] Found a better model at epoch 146.
+[ 2022-07-06 16:28:43,332][train.train_nn_models] [Training] Epoch=147, loss=1073.9474, nll=1073.9474, l2_reg=0.0000, acc=0.2582
+[ 2022-07-06 16:28:43,335][train.train_nn_models] [Validation] Epoch=147, nll=1074.8198, acc=0.2566
+[ 2022-07-06 16:28:43,338][train.train_nn_models] Found a better model at epoch 147.
+[ 2022-07-06 16:28:49,860][train.train_nn_models] [Training] Epoch=148, loss=1073.8953, nll=1073.8953, l2_reg=0.0000, acc=0.2583
+[ 2022-07-06 16:28:49,869][train.train_nn_models] [Validation] Epoch=148, nll=1074.7776, acc=0.2569
+[ 2022-07-06 16:28:49,872][train.train_nn_models] Found a better model at epoch 148.
+[ 2022-07-06 16:28:54,313][train.train_nn_models] [Training] Epoch=149, loss=1073.8445, nll=1073.8445, l2_reg=0.0000, acc=0.2583
+[ 2022-07-06 16:28:54,315][train.train_nn_models] [Validation] Epoch=149, nll=1074.7388, acc=0.2569
+[ 2022-07-06 16:28:54,318][train.train_nn_models] Found a better model at epoch 149.
+[ 2022-07-06 16:28:59,136][train.train_nn_models] [Training] Epoch=150, loss=1073.7948, nll=1073.7948, l2_reg=0.0000, acc=0.2582
+[ 2022-07-06 16:28:59,139][train.train_nn_models] [Validation] Epoch=150, nll=1074.6996, acc=0.2571
+[ 2022-07-06 16:28:59,141][train.train_nn_models] Found a better model at epoch 150.
+[ 2022-07-06 16:29:04,317][train.train_nn_models] [Training] Epoch=151, loss=1073.7439, nll=1073.7439, l2_reg=0.0000, acc=0.2583
+[ 2022-07-06 16:29:04,324][train.train_nn_models] [Validation] Epoch=151, nll=1074.6587, acc=0.2571
+[ 2022-07-06 16:29:04,327][train.train_nn_models] Found a better model at epoch 151.
+[ 2022-07-06 16:29:09,454][train.train_nn_models] [Training] Epoch=152, loss=1073.6951, nll=1073.6951, l2_reg=0.0000, acc=0.2584
+[ 2022-07-06 16:29:09,456][train.train_nn_models] [Validation] Epoch=152, nll=1074.6223, acc=0.2572
+[ 2022-07-06 16:29:09,459][train.train_nn_models] Found a better model at epoch 152.
+[ 2022-07-06 16:29:13,385][train.train_nn_models] [Training] Epoch=153, loss=1073.6462, nll=1073.6462, l2_reg=0.0000, acc=0.2584
+[ 2022-07-06 16:29:13,387][train.train_nn_models] [Validation] Epoch=153, nll=1074.5825, acc=0.2573
+[ 2022-07-06 16:29:13,389][train.train_nn_models] Found a better model at epoch 153.
+[ 2022-07-06 16:29:20,121][train.train_nn_models] [Training] Epoch=154, loss=1073.5975, nll=1073.5975, l2_reg=0.0000, acc=0.2585
+[ 2022-07-06 16:29:20,124][train.train_nn_models] [Validation] Epoch=154, nll=1074.5452, acc=0.2574
+[ 2022-07-06 16:29:20,127][train.train_nn_models] Found a better model at epoch 154.
+[ 2022-07-06 16:29:24,998][train.train_nn_models] [Training] Epoch=155, loss=1073.5492, nll=1073.5492, l2_reg=0.0000, acc=0.2585
+[ 2022-07-06 16:29:25,001][train.train_nn_models] [Validation] Epoch=155, nll=1074.5067, acc=0.2573
+[ 2022-07-06 16:29:25,003][train.train_nn_models] Found a better model at epoch 155.
+[ 2022-07-06 16:29:30,382][train.train_nn_models] [Training] Epoch=156, loss=1073.5013, nll=1073.5013, l2_reg=0.0000, acc=0.2585
+[ 2022-07-06 16:29:30,385][train.train_nn_models] [Validation] Epoch=156, nll=1074.4691, acc=0.2573
+[ 2022-07-06 16:29:30,388][train.train_nn_models] Found a better model at epoch 156.
+[ 2022-07-06 16:29:34,916][train.train_nn_models] [Training] Epoch=157, loss=1073.4532, nll=1073.4532, l2_reg=0.0000, acc=0.2586
+[ 2022-07-06 16:29:34,921][train.train_nn_models] [Validation] Epoch=157, nll=1074.4302, acc=0.2572
+[ 2022-07-06 16:29:34,924][train.train_nn_models] Found a better model at epoch 157.
+[ 2022-07-06 16:29:39,911][train.train_nn_models] [Training] Epoch=158, loss=1073.4055, nll=1073.4055, l2_reg=0.0000, acc=0.2587
+[ 2022-07-06 16:29:39,914][train.train_nn_models] [Validation] Epoch=158, nll=1074.3923, acc=0.2573
+[ 2022-07-06 16:29:39,917][train.train_nn_models] Found a better model at epoch 158.
+[ 2022-07-06 16:29:45,574][train.train_nn_models] [Training] Epoch=159, loss=1073.3589, nll=1073.3589, l2_reg=0.0000, acc=0.2588
+[ 2022-07-06 16:29:45,577][train.train_nn_models] [Validation] Epoch=159, nll=1074.3579, acc=0.2574
+[ 2022-07-06 16:29:45,580][train.train_nn_models] Found a better model at epoch 159.
+[ 2022-07-06 16:29:49,844][train.train_nn_models] [Training] Epoch=160, loss=1073.3138, nll=1073.3138, l2_reg=0.0000, acc=0.2589
+[ 2022-07-06 16:29:49,847][train.train_nn_models] [Validation] Epoch=160, nll=1074.3229, acc=0.2575
+[ 2022-07-06 16:29:49,850][train.train_nn_models] Found a better model at epoch 160.
+[ 2022-07-06 16:29:56,245][train.train_nn_models] [Training] Epoch=161, loss=1073.2673, nll=1073.2673, l2_reg=0.0000, acc=0.2589
+[ 2022-07-06 16:29:56,248][train.train_nn_models] [Validation] Epoch=161, nll=1074.2867, acc=0.2575
+[ 2022-07-06 16:29:56,251][train.train_nn_models] Found a better model at epoch 161.
+[ 2022-07-06 16:30:00,299][train.train_nn_models] [Training] Epoch=162, loss=1073.2233, nll=1073.2233, l2_reg=0.0000, acc=0.2590
+[ 2022-07-06 16:30:00,302][train.train_nn_models] [Validation] Epoch=162, nll=1074.2545, acc=0.2577
+[ 2022-07-06 16:30:00,305][train.train_nn_models] Found a better model at epoch 162.
+[ 2022-07-06 16:30:04,871][train.train_nn_models] [Training] Epoch=163, loss=1073.1779, nll=1073.1779, l2_reg=0.0000, acc=0.2590
+[ 2022-07-06 16:30:04,874][train.train_nn_models] [Validation] Epoch=163, nll=1074.2166, acc=0.2578
+[ 2022-07-06 16:30:04,877][train.train_nn_models] Found a better model at epoch 163.
+[ 2022-07-06 16:30:08,879][train.train_nn_models] [Training] Epoch=164, loss=1073.1334, nll=1073.1334, l2_reg=0.0000, acc=0.2591
+[ 2022-07-06 16:30:08,882][train.train_nn_models] [Validation] Epoch=164, nll=1074.1858, acc=0.2578
+[ 2022-07-06 16:30:08,885][train.train_nn_models] Found a better model at epoch 164.
+[ 2022-07-06 16:30:14,541][train.train_nn_models] [Training] Epoch=165, loss=1073.0902, nll=1073.0902, l2_reg=0.0000, acc=0.2591
+[ 2022-07-06 16:30:14,544][train.train_nn_models] [Validation] Epoch=165, nll=1074.1530, acc=0.2578
+[ 2022-07-06 16:30:14,546][train.train_nn_models] Found a better model at epoch 165.
+[ 2022-07-06 16:30:19,055][train.train_nn_models] [Training] Epoch=166, loss=1073.0466, nll=1073.0466, l2_reg=0.0000, acc=0.2592
+[ 2022-07-06 16:30:19,058][train.train_nn_models] [Validation] Epoch=166, nll=1074.1196, acc=0.2577
+[ 2022-07-06 16:30:19,060][train.train_nn_models] Found a better model at epoch 166.
+[ 2022-07-06 16:30:24,105][train.train_nn_models] [Training] Epoch=167, loss=1073.0037, nll=1073.0037, l2_reg=0.0000, acc=0.2592
+[ 2022-07-06 16:30:24,108][train.train_nn_models] [Validation] Epoch=167, nll=1074.0884, acc=0.2578
+[ 2022-07-06 16:30:24,111][train.train_nn_models] Found a better model at epoch 167.
+[ 2022-07-06 16:30:28,831][train.train_nn_models] [Training] Epoch=168, loss=1072.9603, nll=1072.9603, l2_reg=0.0000, acc=0.2592
+[ 2022-07-06 16:30:28,833][train.train_nn_models] [Validation] Epoch=168, nll=1074.0551, acc=0.2577
+[ 2022-07-06 16:30:28,836][train.train_nn_models] Found a better model at epoch 168.
+[ 2022-07-06 16:30:34,525][train.train_nn_models] [Training] Epoch=169, loss=1072.9182, nll=1072.9182, l2_reg=0.0000, acc=0.2591
+[ 2022-07-06 16:30:34,528][train.train_nn_models] [Validation] Epoch=169, nll=1074.0247, acc=0.2579
+[ 2022-07-06 16:30:34,530][train.train_nn_models] Found a better model at epoch 169.
+[ 2022-07-06 16:30:39,010][train.train_nn_models] [Training] Epoch=170, loss=1072.8768, nll=1072.8768, l2_reg=0.0000, acc=0.2590
+[ 2022-07-06 16:30:39,012][train.train_nn_models] [Validation] Epoch=170, nll=1073.9965, acc=0.2579
+[ 2022-07-06 16:30:39,015][train.train_nn_models] Found a better model at epoch 170.
+[ 2022-07-06 16:30:44,055][train.train_nn_models] [Training] Epoch=171, loss=1072.8346, nll=1072.8346, l2_reg=0.0000, acc=0.2590
+[ 2022-07-06 16:30:44,104][train.train_nn_models] [Validation] Epoch=171, nll=1073.9647, acc=0.2579
+[ 2022-07-06 16:30:44,107][train.train_nn_models] Found a better model at epoch 171.
+[ 2022-07-06 16:30:48,061][train.train_nn_models] [Training] Epoch=172, loss=1072.7942, nll=1072.7942, l2_reg=0.0000, acc=0.2592
+[ 2022-07-06 16:30:48,064][train.train_nn_models] [Validation] Epoch=172, nll=1073.9375, acc=0.2578
+[ 2022-07-06 16:30:48,067][train.train_nn_models] Found a better model at epoch 172.
+[ 2022-07-06 16:30:53,575][train.train_nn_models] [Training] Epoch=173, loss=1072.7534, nll=1072.7534, l2_reg=0.0000, acc=0.2592
+[ 2022-07-06 16:30:53,578][train.train_nn_models] [Validation] Epoch=173, nll=1073.9064, acc=0.2577
+[ 2022-07-06 16:30:53,581][train.train_nn_models] Found a better model at epoch 173.
+[ 2022-07-06 16:31:00,062][train.train_nn_models] [Training] Epoch=174, loss=1072.7125, nll=1072.7125, l2_reg=0.0000, acc=0.2593
+[ 2022-07-06 16:31:00,065][train.train_nn_models] [Validation] Epoch=174, nll=1073.8777, acc=0.2578
+[ 2022-07-06 16:31:00,074][train.train_nn_models] Found a better model at epoch 174.
+[ 2022-07-06 16:31:04,918][train.train_nn_models] [Training] Epoch=175, loss=1072.6727, nll=1072.6727, l2_reg=0.0000, acc=0.2593
+[ 2022-07-06 16:31:04,921][train.train_nn_models] [Validation] Epoch=175, nll=1073.8512, acc=0.2576
+[ 2022-07-06 16:31:04,924][train.train_nn_models] Found a better model at epoch 175.
+[ 2022-07-06 16:31:09,654][train.train_nn_models] [Training] Epoch=176, loss=1072.6333, nll=1072.6333, l2_reg=0.0000, acc=0.2593
+[ 2022-07-06 16:31:09,657][train.train_nn_models] [Validation] Epoch=176, nll=1073.8243, acc=0.2579
+[ 2022-07-06 16:31:09,660][train.train_nn_models] Found a better model at epoch 176.
+[ 2022-07-06 16:31:15,601][train.train_nn_models] [Training] Epoch=177, loss=1072.5950, nll=1072.5950, l2_reg=0.0000, acc=0.2593
+[ 2022-07-06 16:31:15,604][train.train_nn_models] [Validation] Epoch=177, nll=1073.7966, acc=0.2579
+[ 2022-07-06 16:31:15,606][train.train_nn_models] Found a better model at epoch 177.
+[ 2022-07-06 16:31:22,620][train.train_nn_models] [Training] Epoch=178, loss=1072.5544, nll=1072.5544, l2_reg=0.0000, acc=0.2594
+[ 2022-07-06 16:31:22,623][train.train_nn_models] [Validation] Epoch=178, nll=1073.7683, acc=0.2579
+[ 2022-07-06 16:31:22,626][train.train_nn_models] Found a better model at epoch 178.
+[ 2022-07-06 16:31:27,429][train.train_nn_models] [Training] Epoch=179, loss=1072.5160, nll=1072.5160, l2_reg=0.0000, acc=0.2594
+[ 2022-07-06 16:31:27,431][train.train_nn_models] [Validation] Epoch=179, nll=1073.7446, acc=0.2578
+[ 2022-07-06 16:31:27,434][train.train_nn_models] Found a better model at epoch 179.
+[ 2022-07-06 16:31:32,382][train.train_nn_models] [Training] Epoch=180, loss=1072.4780, nll=1072.4780, l2_reg=0.0000, acc=0.2594
+[ 2022-07-06 16:31:32,386][train.train_nn_models] [Validation] Epoch=180, nll=1073.7192, acc=0.2578
+[ 2022-07-06 16:31:32,389][train.train_nn_models] Found a better model at epoch 180.
+[ 2022-07-06 16:31:38,486][train.train_nn_models] [Training] Epoch=181, loss=1072.4414, nll=1072.4414, l2_reg=0.0000, acc=0.2593
+[ 2022-07-06 16:31:38,489][train.train_nn_models] [Validation] Epoch=181, nll=1073.6976, acc=0.2580
+[ 2022-07-06 16:31:38,491][train.train_nn_models] Found a better model at epoch 181.
+[ 2022-07-06 16:31:43,944][train.train_nn_models] [Training] Epoch=182, loss=1072.4047, nll=1072.4047, l2_reg=0.0000, acc=0.2593
+[ 2022-07-06 16:31:43,947][train.train_nn_models] [Validation] Epoch=182, nll=1073.6740, acc=0.2579
+[ 2022-07-06 16:31:43,950][train.train_nn_models] Found a better model at epoch 182.
+[ 2022-07-06 16:31:49,431][train.train_nn_models] [Training] Epoch=183, loss=1072.3683, nll=1072.3683, l2_reg=0.0000, acc=0.2593
+[ 2022-07-06 16:31:49,434][train.train_nn_models] [Validation] Epoch=183, nll=1073.6495, acc=0.2577
+[ 2022-07-06 16:31:49,485][train.train_nn_models] Found a better model at epoch 183.
+[ 2022-07-06 16:31:54,421][train.train_nn_models] [Training] Epoch=184, loss=1072.3297, nll=1072.3297, l2_reg=0.0000, acc=0.2593
+[ 2022-07-06 16:31:54,424][train.train_nn_models] [Validation] Epoch=184, nll=1073.6127, acc=0.2578
+[ 2022-07-06 16:31:54,426][train.train_nn_models] Found a better model at epoch 184.
+[ 2022-07-06 16:31:59,210][train.train_nn_models] [Training] Epoch=185, loss=1072.2916, nll=1072.2916, l2_reg=0.0000, acc=0.2594
+[ 2022-07-06 16:31:59,213][train.train_nn_models] [Validation] Epoch=185, nll=1073.5995, acc=0.2577
+[ 2022-07-06 16:31:59,215][train.train_nn_models] Found a better model at epoch 185.
+[ 2022-07-06 16:32:05,171][train.train_nn_models] [Training] Epoch=186, loss=1072.2629, nll=1072.2629, l2_reg=0.0000, acc=0.2593
+[ 2022-07-06 16:32:05,174][train.train_nn_models] [Validation] Epoch=186, nll=1073.5864, acc=0.2575
+[ 2022-07-06 16:32:05,177][train.train_nn_models] Found a better model at epoch 186.
+[ 2022-07-06 16:32:09,438][train.train_nn_models] [Training] Epoch=187, loss=1072.2281, nll=1072.2281, l2_reg=0.0000, acc=0.2593
+[ 2022-07-06 16:32:09,441][train.train_nn_models] [Validation] Epoch=187, nll=1073.5658, acc=0.2576
+[ 2022-07-06 16:32:09,444][train.train_nn_models] Found a better model at epoch 187.
+[ 2022-07-06 16:32:13,255][train.train_nn_models] [Training] Epoch=188, loss=1072.1937, nll=1072.1937, l2_reg=0.0000, acc=0.2594
+[ 2022-07-06 16:32:13,258][train.train_nn_models] [Validation] Epoch=188, nll=1073.5444, acc=0.2576
+[ 2022-07-06 16:32:13,261][train.train_nn_models] Found a better model at epoch 188.
+[ 2022-07-06 16:32:19,769][train.train_nn_models] [Training] Epoch=189, loss=1072.1589, nll=1072.1589, l2_reg=0.0000, acc=0.2593
+[ 2022-07-06 16:32:19,772][train.train_nn_models] [Validation] Epoch=189, nll=1073.5219, acc=0.2573
+[ 2022-07-06 16:32:19,775][train.train_nn_models] Found a better model at epoch 189.
+[ 2022-07-06 16:32:24,538][train.train_nn_models] [Training] Epoch=190, loss=1072.1179, nll=1072.1179, l2_reg=0.0000, acc=0.2593
+[ 2022-07-06 16:32:24,541][train.train_nn_models] [Validation] Epoch=190, nll=1073.4792, acc=0.2572
+[ 2022-07-06 16:32:24,544][train.train_nn_models] Found a better model at epoch 190.
+[ 2022-07-06 16:32:29,348][train.train_nn_models] [Training] Epoch=191, loss=1072.0804, nll=1072.0804, l2_reg=0.0000, acc=0.2593
+[ 2022-07-06 16:32:29,351][train.train_nn_models] [Validation] Epoch=191, nll=1073.4607, acc=0.2569
+[ 2022-07-06 16:32:29,354][train.train_nn_models] Found a better model at epoch 191.
+[ 2022-07-06 16:32:33,602][train.train_nn_models] [Training] Epoch=192, loss=1072.0498, nll=1072.0498, l2_reg=0.0000, acc=0.2593
+[ 2022-07-06 16:32:33,604][train.train_nn_models] [Validation] Epoch=192, nll=1073.4480, acc=0.2571
+[ 2022-07-06 16:32:33,607][train.train_nn_models] Found a better model at epoch 192.
+[ 2022-07-06 16:32:39,040][train.train_nn_models] [Training] Epoch=193, loss=1072.0131, nll=1072.0131, l2_reg=0.0000, acc=0.2594
+[ 2022-07-06 16:32:39,043][train.train_nn_models] [Validation] Epoch=193, nll=1073.4258, acc=0.2569
+[ 2022-07-06 16:32:39,046][train.train_nn_models] Found a better model at epoch 193.
+[ 2022-07-06 16:32:43,090][train.train_nn_models] [Training] Epoch=194, loss=1071.9791, nll=1071.9791, l2_reg=0.0000, acc=0.2594
+[ 2022-07-06 16:32:43,093][train.train_nn_models] [Validation] Epoch=194, nll=1073.4044, acc=0.2568
+[ 2022-07-06 16:32:43,096][train.train_nn_models] Found a better model at epoch 194.
+[ 2022-07-06 16:32:47,900][train.train_nn_models] [Training] Epoch=195, loss=1071.9458, nll=1071.9458, l2_reg=0.0000, acc=0.2595
+[ 2022-07-06 16:32:47,903][train.train_nn_models] [Validation] Epoch=195, nll=1073.3799, acc=0.2565
+[ 2022-07-06 16:32:47,906][train.train_nn_models] Found a better model at epoch 195.
+[ 2022-07-06 16:32:52,890][train.train_nn_models] [Training] Epoch=196, loss=1071.9111, nll=1071.9111, l2_reg=0.0000, acc=0.2595
+[ 2022-07-06 16:32:52,893][train.train_nn_models] [Validation] Epoch=196, nll=1073.3623, acc=0.2565
+[ 2022-07-06 16:32:52,896][train.train_nn_models] Found a better model at epoch 196.
+[ 2022-07-06 16:32:57,725][train.train_nn_models] [Training] Epoch=197, loss=1071.8795, nll=1071.8795, l2_reg=0.0000, acc=0.2595
+[ 2022-07-06 16:32:57,728][train.train_nn_models] [Validation] Epoch=197, nll=1073.3417, acc=0.2563
+[ 2022-07-06 16:32:57,731][train.train_nn_models] Found a better model at epoch 197.
+[ 2022-07-06 16:33:03,515][train.train_nn_models] [Training] Epoch=198, loss=1071.8467, nll=1071.8467, l2_reg=0.0000, acc=0.2595
+[ 2022-07-06 16:33:03,518][train.train_nn_models] [Validation] Epoch=198, nll=1073.3177, acc=0.2564
+[ 2022-07-06 16:33:03,521][train.train_nn_models] Found a better model at epoch 198.
+[ 2022-07-06 16:33:08,272][train.train_nn_models] [Training] Epoch=199, loss=1071.8160, nll=1071.8160, l2_reg=0.0000, acc=0.2596
+[ 2022-07-06 16:33:08,275][train.train_nn_models] [Validation] Epoch=199, nll=1073.3009, acc=0.2568
+[ 2022-07-06 16:33:08,278][train.train_nn_models] Found a better model at epoch 199.
+[ 2022-07-06 16:33:08,634][train.eval_nll] [Test]nll=1084.8018, acc=0.2564
+[ 2022-07-06 16:54:28,689][train.<module>]                    timestamp  ...                                             config
+0 2022-07-06 16:54:28.671828  ...  {'model': 'ERPP', 'dataset': 'mhp-1K-10', 'inp...
+1 2022-07-06 16:54:28.671828  ...  {'model': 'ERPP', 'dataset': 'mhp-1K-10', 'inp...
+2 2022-07-06 16:54:28.671828  ...  {'model': 'ERPP', 'dataset': 'mhp-1K-10', 'inp...
+3 2022-07-06 16:54:28.671828  ...  {'model': 'ERPP', 'dataset': 'mhp-1K-10', 'inp...
+4 2022-07-06 16:54:28.671828  ...  {'model': 'ERPP', 'dataset': 'mhp-1K-10', 'inp...
+5 2022-07-06 16:54:28.671828  ...  {'model': 'ERPP', 'dataset': 'mhp-1K-10', 'inp...
+
+[6 rows x 7 columns]
