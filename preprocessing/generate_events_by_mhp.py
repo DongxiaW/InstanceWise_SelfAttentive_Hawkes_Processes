@@ -125,7 +125,6 @@ with Timer("Simulating events"), Pool(cpu_count() // 2) as p:
             ),
         )
     )
-    print(timestamps)
 
 event_seqs = np.asarray([counting_proc_to_event_seq(cp) for cp in timestamps])
 

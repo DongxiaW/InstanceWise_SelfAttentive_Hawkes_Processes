@@ -47,25 +47,25 @@ def get_parser():
     )
 
     parser.add_argument(
-        "--intens_a", type=float, default=0.01, help="default: 0.01"
+        "--intens_a", type=float, default=0.005, help="default: 0.005"
     )
     parser.add_argument(
-        "--intens_b", type=float, default=0.01, help="default: 0.01"
+        "--intens_b", type=float, default=0.005, help="default: 0.005"
     )
     parser.add_argument(
-        "--intens_c", type=float, default=0.1, help="default: 0.1"
+        "--intens_c", type=float, default=0.05, help="default: 0.05"
     )
     parser.add_argument(
-        "--intens_d", type=float, default=0.1, help="default: 0.1"
+        "--intens_d", type=float, default=0.05, help="default: 0.05"
     )
     parser.add_argument(
-        "--intens_e_base", type=float, default=0.01, help="default: 0.01"
+        "--intens_e_base", type=float, default=0.005, help="default: 0.005"
     )
     parser.add_argument(
-        "--intens_e_direct", type=float, default=0.03, help="default: 0.03"
+        "--intens_e_direct", type=float, default=0.015, help="default: 0.015"
     )
     parser.add_argument(
-        "--intens_e_syn", type=float, default=0.1, help="default: 0.1"
+        "--intens_e_syn", type=float, default=0.05, help="default: 0.05"
     )
 
     parser.add_argument("--n_splits", type=int, default=5, help="default: 5")

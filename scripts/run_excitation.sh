@@ -3,8 +3,8 @@ CUDA_DEVICE_ORDER=PCI_BUS_ID
 WS=`pwd`
 
 n_seqs=1000
-n_types=12 #12
-n_correlations=25 #16
+n_types=10
+n_correlations=16
 dataset=mhp-$(($n_seqs / 1000))K-$n_types
 shared_args="--dataset $dataset"
 n_splits=5  # if modified, remember to modify below as well!!!
