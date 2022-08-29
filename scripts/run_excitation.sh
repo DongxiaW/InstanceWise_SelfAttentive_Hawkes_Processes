@@ -3,8 +3,8 @@ CUDA_DEVICE_ORDER=PCI_BUS_ID
 WS=`pwd`
 
 n_seqs=1000
-n_types=10
-n_correlations=16
+n_types=12 #12
+n_correlations=25 #16
 dataset=mhp-$(($n_seqs / 1000))K-$n_types
 shared_args="--dataset $dataset"
 n_splits=5  # if modified, remember to modify below as well!!!
@@ -29,7 +29,7 @@ if [[ $* == *all* ]] || [[ $* == *preprocess* ]]; then
         --baseline 0.01 \
         --exp_decay 0.05  \
         --adj_spectral_radius 0.8 \
-        --max_jumps 250 \
+        --max_jumps 500 \
         --n_splits $n_splits
         --fit
 fi

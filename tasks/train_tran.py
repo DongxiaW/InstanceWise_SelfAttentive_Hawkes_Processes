@@ -16,9 +16,13 @@ elif "pkg" not in os.listdir("."):
     os.chdir("..")
 sys.path.append(".")
 
-from pkg.models.rnn import (
+# from pkg.models.rnn import (
+#     EventSeqDataset,
+#     ExplainableRecurrentPointProcess,
+# )
+from pkg.models.transformer import (
     EventSeqDataset,
-    ExplainableRecurrentPointProcess,
+    ExplainableTransformerPointProcess,
 )
 from pkg.models.rppn import RecurrentPointProcessNet
 from pkg.utils.argparser.training import add_subparser_arguments
@@ -46,7 +50,7 @@ def get_parser():
     subparsers = parser.add_subparsers(
         description="Supported models", dest="model"
     )
-    for model in ["ERPP", "RME", "RPPN", "HExp", "HSG", "NPHC"]:
+    for model in ["ERPP", "RME", "RPPN", "HExp", "HSG", "NPHC", "Tran"]:
         add_subparser_arguments(model, subparsers)
 
     return parser
@@ -55,6 +59,8 @@ def get_parser():
 def get_model(args, n_types):
     if args.model == "ERPP":
         model = ExplainableRecurrentPointProcess(n_types=n_types, **vars(args))
+    elif args.model == "Tran":
+        model = ExplainableTransformerPointProcess(n_types=n_types, **vars(args))
     elif args.model == "RPPN":
         model = RecurrentPointProcessNet(n_types=n_types, **vars(args))
     elif args.model == "HExp":
@@ -99,7 +105,9 @@ def get_device(cuda, dynamic=False):
 
 def get_hparam_str(args):
     if args.model == "ERPP":
-        hparams = ["max_mean", "n_bases", "hidden_size", "lr"]
+        hparams = ["max_mean", "n_bases", "hidden_size", "lr", "tran_layer", "tran_head"]
+    elif args.model == "Tran":
+        hparams = ["max_mean", "n_bases", "hidden_size", "lr", "tran_layer", "tran_head"]
     else:
         hparams = []
 
@@ -162,7 +170,7 @@ def train_nn_models(model, event_seqs, args):
 
 
 def eval_nll(model, event_seqs, args):
-    if args.model in ["RME", "ERPP", "RPPN"]:
+    if args.model in ["RME", "ERPP", "RPPN", "Tran"]:
 
         dataloader = DataLoader(
             EventSeqDataset(event_seqs), shuffle=False, **dataloader_args
@@ -188,7 +196,7 @@ def eval_nll(model, event_seqs, args):
 
 
 def predict_next_event(model, event_seqs, args):
-    if args.model in ["ERPP", "RPPN"]:
+    if args.model in ["ERPP", "RPPN", "Tran"]:
         dataloader = DataLoader(
             EventSeqDataset(event_seqs), shuffle=False, **dataloader_args
         )
@@ -211,7 +219,7 @@ def predict_next_event(model, event_seqs, args):
 
 def get_infectivity_matrix(model, event_seqs, args):
 
-    if args.model in ["RME", "ERPP", "RPPN"]:
+    if args.model in ["RME", "ERPP", "RPPN", "Tran"]:
         _dataloader_args = dataloader_args.copy()
         if "attr_batch_size" in args and args.attr_batch_size:
             _dataloader_args.update(batch_size=args.attr_batch_size)
@@ -268,7 +276,7 @@ if __name__ == "__main__":
         # define model
         model = get_model(args, n_types)
 
-        if args.model in ["RME", "ERPP", "RPPN"]:
+        if args.model in ["RME", "ERPP", "RPPN", "Tran"]:
             dataloader_args = {
                 "batch_size": args.batch_size,
                 "collate_fn": EventSeqDataset.collate_fn,
@@ -315,6 +323,7 @@ if __name__ == "__main__":
 
     # evaluate infectivity matrix
     if not args.skip_eval_infectivity:
+        print('for eval infectivity part')
         A_pred = get_infectivity_matrix(model, event_seqs, args)
         np.savetxt(osp.join(output_path, "scores_mat.txt"), A_pred)
 

@@ -86,6 +86,8 @@ class ExplainableTransformerPointProcess(nn.Module):
         max_mean: float,
         embedding_dim: int = 32,
         hidden_size: int = 32,
+        tran_layer: int = 1,
+        tran_head: int = 1,
         n_bases: int = 4,
         basis_type: str = "normal",
         dropout: float = 0.0,
@@ -98,12 +100,12 @@ class ExplainableTransformerPointProcess(nn.Module):
         self.dropout = nn.Dropout(p=dropout)
         encoder_layers = nn.TransformerEncoderLayer(
             d_model=embedding_dim+1, 
-            nhead=5, #num_head add to config
+            nhead=tran_head, #num_head add to config
             dim_feedforward=embedding_dim, #hidden_size
             dropout=dropout,
             activation='relu',
         )
-        self.transformer = nn.TransformerEncoder(encoder_layers, num_layers=3) #num_layers add to config
+        self.transformer = nn.TransformerEncoder(encoder_layers, num_layers=tran_layer) #num_layers add to config
         self.linear_layer = nn.Linear(embedding_dim+1, embedding_dim)
 
         self.bases = [Unity()]

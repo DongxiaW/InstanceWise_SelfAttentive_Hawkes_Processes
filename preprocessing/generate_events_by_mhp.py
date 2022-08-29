@@ -64,7 +64,7 @@ def get_parser():
         "--max_jumps", type=int, default=1000, help="default: 1000"
     )
     parser.add_argument("--n_splits", type=int, default=5, help="default: 5")
-    parser.add_argument("--rand_seed", type=int, default=0, help="default: 0")
+    parser.add_argument("--rand_seed", type=int, default=1, help="default: 1")
     parser.add_argument("--fit", action="store_true", help="Default: False")
 
     return parser
@@ -125,6 +125,7 @@ with Timer("Simulating events"), Pool(cpu_count() // 2) as p:
             ),
         )
     )
+    print(timestamps)
 
 event_seqs = np.asarray([counting_proc_to_event_seq(cp) for cp in timestamps])
 

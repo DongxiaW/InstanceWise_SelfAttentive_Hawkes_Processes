@@ -31,19 +31,19 @@ def get_parser():
     )
     parser.add_argument("--name", type=str, default="pgem")
     parser.add_argument(
-        "--n_seqs", type=int, default=200, help="default: 200"
+        "--n_seqs", type=int, default=1000, help="default: 1000"
     )
-    parser.add_argument("--n_copies", type=int, default=3, help="default: 5")
-    parser.add_argument("--max_t", type=int, default=100, help="default: 100")
+    parser.add_argument("--n_copies", type=int, default=3, help="default: 3")
+    parser.add_argument("--max_t", type=int, default=1000, help="default: 1000")
 
     parser.add_argument(
-        "--win_e_a", type=float, default=100, help="default: 100"
+        "--win_e_a", type=float, default=200, help="default: 200"
     )
     parser.add_argument(
-        "--win_e_b", type=float, default=100, help="default: 100"
+        "--win_e_b", type=float, default=200, help="default: 200"
     )
     parser.add_argument(
-        "--win_e_c", type=float, default=10, help="default: 10"
+        "--win_e_c", type=float, default=20, help="default: 20"
     )
 
     parser.add_argument(
@@ -120,7 +120,7 @@ with Timer("Simulating events"):
         event_seqs.append(seq)
 event_seqs = np.asarray(event_seqs)
 
-dataset = f"{args.name}-{args.n_seqs // 200}K-{n_types}"
+dataset = f"{args.name}-{args.n_seqs // 1000}K-{n_types}"
 output_path = f"data/input/{dataset}"
 makedirs([output_path])
 export_json(vars(args), osp.join(output_path, "config.json"))
