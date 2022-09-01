@@ -3,6 +3,9 @@ import os.path as osp
 import sys
 import argparse
 
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+print('print(sys.path)')
+print(sys.path)
 # if "__file__" in globals():
 #     os.chdir(os.path.dirname(__file__) + "/..")
 # sys.path.append(".")

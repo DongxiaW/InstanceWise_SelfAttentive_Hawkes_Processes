@@ -39,34 +39,34 @@ sns.set_context("paper", font_scale=1)
 # %load_ext autoreload
 # %autoreload 2
 
-# data_args = argparse.Namespace(
-#     dataset="mhp-1K-10", input_path="data/input", output_path="data/output"
-# )
-# print(data_args)
+data_args = argparse.Namespace(
+    dataset="mhp-1K-10", input_path="data/input", output_path="data/output"
+)
+print(data_args)
 
 
-# plt.figure()
-# pred_A = np.loadtxt(
-#     osp.join(
-#         data_args.input_path,
-#         data_args.dataset,
-#         "infectivity.txt",
-#     )
-# )
-# pred_A = (pred_A - np.min(pred_A))/(np.max(pred_A) - np.min(pred_A))
+plt.figure()
+pred_A = np.loadtxt(
+    osp.join(
+        data_args.input_path,
+        data_args.dataset,
+        "infectivity.txt",
+    )
+)
+pred_A = (pred_A - np.min(pred_A))/(np.max(pred_A) - np.min(pred_A))
 
-# df = pd.DataFrame(pred_A)
-# sns.set()
-# ax = sns.heatmap(df, square=True, center=0, cmap="RdBu_r")
+df = pd.DataFrame(pred_A)
+sns.set()
+ax = sns.heatmap(df, square=True, center=0, cmap="RdBu_r")
 
-# savefig(
-#     ax.get_figure(),
-#     osp.join(
-#         data_args.input_path,
-#         data_args.dataset,
-#         "infectivity.pdf",
-#     ),
-# )
+savefig(
+    ax.get_figure(),
+    osp.join(
+        data_args.input_path,
+        data_args.dataset,
+        "infectivity.pdf",
+    ),
+)
 
 
 data_args = argparse.Namespace(

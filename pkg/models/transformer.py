@@ -186,7 +186,7 @@ class ExplainableTransformerPointProcess(nn.Module):
 
         feat = torch.cat([temp_feat, type_feat], dim=-1)
         feat = feat.transpose(1,0)
-        print('feat.shape',feat.shape)
+        # print('feat.shape',feat.shape)
         if feat_mask is None:
             feat_mask = self.subsequent_mask(len(feat))
             if device:
@@ -476,8 +476,8 @@ class ExplainableTransformerPointProcess(nn.Module):
             event_scores = torch.zeros(
                 self.n_types, batch_size, T - 1, device=device
             )
-            print("occurred_types", occurred_types)
-            print('inputs.shape', inputs.shape)
+            # print("occurred_types", occurred_types)
+            # print('inputs.shape', inputs.shape)
             for k in occurred_types:
                 ig = batch_integrated_gradient(
                     partial(func, target_type=k),
@@ -486,7 +486,7 @@ class ExplainableTransformerPointProcess(nn.Module):
                     mask=mask.unsqueeze(-1),
                     steps=steps,
                 )
-                print('ig.shape',ig.shape)
+                # print('ig.shape',ig.shape)
                 event_scores[k] = ig[:, :-1].sum(-1)
 
             # shape=[K, B, T - 1]

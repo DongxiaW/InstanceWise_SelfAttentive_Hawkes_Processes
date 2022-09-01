@@ -40,9 +40,9 @@ if [[ $* == *all* ]] || [[ $* == *HExp* ]]; then
     printf "%s\n" "$WS/tasks/train.py HExp $shared_args --decay 0.05 --split_id "{0..4} | $LOCAL_RUN
 fi
 
-if [[ $* == *all* ]] || [[ $* == *NPHC* ]]; then
-    printf "%s\n" "$WS/tasks/train.py NPHC $shared_args --integration_support 20 --verbose --split_id "{0..4} | $LOCAL_RUN
-fi
+# if [[ $* == *all* ]] || [[ $* == *NPHC* ]]; then
+#     printf "%s\n" "$WS/tasks/train.py NPHC $shared_args --integration_support 20 --verbose --split_id "{0..4} | $LOCAL_RUN
+# fi
 
 if [[ $* == *all* ]] || [[ $* == *HSG* ]]; then
     printf "%s\n" "$WS/tasks/train.py HSG $shared_args --max_mean 1000 --n_gaussians 5 --verbose --split_id "{0..4} | $LOCAL_RUN
@@ -53,7 +53,7 @@ if [[ $* == *all* ]] || [[ $* == *RPPN* ]]; then
 fi
 
 if [[ $* == *all* ]] || [[ $* == *ERPP* ]]; then
-    printf "%s\n" "$WS/tasks/train.py ERPP $shared_args --epoch 200 --cuda --split_id "{0..4} | $LOCAL_RUN
+    printf "%s\n" "$WS/tasks/train.py ERPP $shared_args --cuda --split_id "{0..4} | $LOCAL_RUN
 fi
 
 # python postprocessing/summarize_results.py $dataset

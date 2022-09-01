@@ -1,0 +1,17 @@
+{
+    "model": "HSG",
+    "dataset": "pgem-1K-15",
+    "input_dir": "data/input",
+    "output_dir": "data/output",
+    "split_id": 2,
+    "rand_seed": 1,
+    "cuda": false,
+    "skip_eval_infectivity": false,
+    "skip_pred_next_event": false,
+    "verbose": true,
+    "max_mean": 1000.0,
+    "n_gaussians": 5,
+    "penalty": 1000.0,
+    "n_threads": 8,
+    "max_seqs": 0
+}

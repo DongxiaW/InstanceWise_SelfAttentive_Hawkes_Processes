@@ -39,194 +39,194 @@ sns.set_context("paper", font_scale=1)
 # %load_ext autoreload
 # %autoreload 2
 
+# data_args = argparse.Namespace(
+#     dataset="mhp-1K-10", input_path="data/input", output_path="data/output_baseline"
+# )
+# print(data_args)
+
+# model_args = argparse.Namespace(
+#     model="ERPP", max_mean=100, n_bases=7, hidden_size=64, lr=0.001
+# )
+# print(model_args)
+
+# for split_id in range(5):
+#     plt.figure()
+#     pred_A = np.loadtxt(
+#         osp.join(
+#             data_args.output_path,
+#             data_args.dataset,
+#             f"split_id={split_id}",
+#             model_args.model,
+#             get_hparam_str(model_args),
+#             "scores_mat.txt",
+#         )
+#     )
+#     pred_A = (pred_A - np.min(pred_A))/(np.max(pred_A) - np.min(pred_A))
+
+#     df = pd.DataFrame(pred_A)
+#     sns.set()
+#     ax = sns.heatmap(df, square=True, center=0, cmap="RdBu_r")
+
+#     savefig(
+#         ax.get_figure(),
+#         osp.join(
+#             data_args.output_path,
+#             data_args.dataset,
+#             f"{data_args.dataset}_{split_id}-{model_args.model}-score_mat.pdf",
+#         ),
+#     )
+
+# data_args = argparse.Namespace(
+#     dataset="mhp-1K-10", input_path="data/input", output_path="data/output_baseline"
+# )
+# print(data_args)
+
+# model_args = argparse.Namespace(
+#     model="HExp", max_mean=100, n_bases=7, hidden_size=64, lr=0.001
+# )
+# print(model_args)
+
+# for split_id in range(5):
+#     plt.figure()
+#     pred_A = np.loadtxt(
+#         osp.join(
+#             data_args.output_path,
+#             data_args.dataset,
+#             f"split_id={split_id}",
+#             model_args.model,
+#             get_hparam_str(model_args),
+#             "scores_mat.txt",
+#         )
+#     )
+#     pred_A = (pred_A - np.min(pred_A))/(np.max(pred_A) - np.min(pred_A))
+
+#     df = pd.DataFrame(pred_A)
+#     sns.set()
+#     ax = sns.heatmap(df, square=True, center=0, cmap="RdBu_r")
+
+#     savefig(
+#         ax.get_figure(),
+#         osp.join(
+#             data_args.output_path,
+#             data_args.dataset,
+#             f"{data_args.dataset}_{split_id}-{model_args.model}-score_mat.pdf",
+#         ),
+#     )
+
+# data_args = argparse.Namespace(
+#     dataset="mhp-1K-10", input_path="data/input", output_path="data/output_baseline"
+# )
+# print(data_args)
+
+# model_args = argparse.Namespace(
+#     model="HSG", max_mean=100, n_bases=7, hidden_size=64, lr=0.001
+# )
+# print(model_args)
+
+# for split_id in range(5):
+#     plt.figure()
+#     pred_A = np.loadtxt(
+#         osp.join(
+#             data_args.output_path,
+#             data_args.dataset,
+#             f"split_id={split_id}",
+#             model_args.model,
+#             get_hparam_str(model_args),
+#             "scores_mat.txt",
+#         )
+#     )
+#     pred_A = (pred_A - np.min(pred_A))/(np.max(pred_A) - np.min(pred_A))
+
+#     df = pd.DataFrame(pred_A)
+#     sns.set()
+#     ax = sns.heatmap(df, square=True, center=0, cmap="RdBu_r")
+
+#     savefig(
+#         ax.get_figure(),
+#         osp.join(
+#             data_args.output_path,
+#             data_args.dataset,
+#             f"{data_args.dataset}_{split_id}-{model_args.model}-score_mat.pdf",
+#         ),
+#     )
+
+# data_args = argparse.Namespace(
+#     dataset="mhp-1K-10", input_path="data/input", output_path="data/output_baseline"
+# )
+# print(data_args)
+
+# model_args = argparse.Namespace(
+#     model="RPPN", max_mean=100, n_bases=7, hidden_size=64, lr=0.001
+# )
+# print(model_args)
+
+# for split_id in range(5):
+#     plt.figure()
+#     pred_A = np.loadtxt(
+#         osp.join(
+#             data_args.output_path,
+#             data_args.dataset,
+#             f"split_id={split_id}",
+#             model_args.model,
+#             get_hparam_str(model_args),
+#             "scores_mat.txt",
+#         )
+#     )
+#     pred_A = (pred_A - np.min(pred_A))/(np.max(pred_A) - np.min(pred_A))
+
+#     df = pd.DataFrame(pred_A)
+#     sns.set()
+#     ax = sns.heatmap(df, square=True, center=0, cmap="RdBu_r")
+
+#     savefig(
+#         ax.get_figure(),
+#         osp.join(
+#             data_args.output_path,
+#             data_args.dataset,
+#             f"{data_args.dataset}_{split_id}-{model_args.model}-score_mat.pdf",
+#         ),
+#     )
+
+
+# data_args = argparse.Namespace(
+#     dataset="mhp-1K-10", input_path="data/input", output_path="data/output_baseline"
+# )
+# print(data_args)
+
+# model_args = argparse.Namespace(
+#     model="ERPP", max_mean=20.0, n_bases=7, hidden_size=64, lr=0.001
+# )
+# print(model_args)
+
+# for split_id in range(5):
+#     plt.figure()
+#     pred_A = np.loadtxt(
+#         osp.join(
+#             data_args.output_path,
+#             data_args.dataset,
+#             f"split_id={split_id}",
+#             model_args.model,
+#             get_hparam_str(model_args),
+#             "scores_mat.txt",
+#         )
+#     )
+#     pred_A = (pred_A - np.min(pred_A))/(np.max(pred_A) - np.min(pred_A))
+
+#     df = pd.DataFrame(pred_A)
+#     sns.set()
+#     ax = sns.heatmap(df, square=True, center=0, cmap="RdBu_r")
+
+#     savefig(
+#         ax.get_figure(),
+#         osp.join(
+#             data_args.output_path,
+#             data_args.dataset,
+#             f"{data_args.dataset}_{split_id}-{model_args.model}-score_mat.pdf",
+#         ),
+#     )
+
 data_args = argparse.Namespace(
-    dataset="mhp-1K-10", input_path="data/input", output_path="data/output"
-)
-print(data_args)
-
-model_args = argparse.Namespace(
-    model="ERPP", max_mean=100, n_bases=7, hidden_size=64, lr=0.001
-)
-print(model_args)
-
-for split_id in range(5):
-    plt.figure()
-    pred_A = np.loadtxt(
-        osp.join(
-            data_args.output_path,
-            data_args.dataset,
-            f"split_id={split_id}",
-            model_args.model,
-            get_hparam_str(model_args),
-            "scores_mat.txt",
-        )
-    )
-    pred_A = (pred_A - np.min(pred_A))/(np.max(pred_A) - np.min(pred_A))
-
-    df = pd.DataFrame(pred_A)
-    sns.set()
-    ax = sns.heatmap(df, square=True, center=0, cmap="RdBu_r")
-
-    savefig(
-        ax.get_figure(),
-        osp.join(
-            data_args.output_path,
-            data_args.dataset,
-            f"{data_args.dataset}_{split_id}-{model_args.model}-score_mat.pdf",
-        ),
-    )
-
-data_args = argparse.Namespace(
-    dataset="mhp-1K-10", input_path="data/input", output_path="data/output"
-)
-print(data_args)
-
-model_args = argparse.Namespace(
-    model="HExp", max_mean=100, n_bases=7, hidden_size=64, lr=0.001
-)
-print(model_args)
-
-for split_id in range(5):
-    plt.figure()
-    pred_A = np.loadtxt(
-        osp.join(
-            data_args.output_path,
-            data_args.dataset,
-            f"split_id={split_id}",
-            model_args.model,
-            get_hparam_str(model_args),
-            "scores_mat.txt",
-        )
-    )
-    pred_A = (pred_A - np.min(pred_A))/(np.max(pred_A) - np.min(pred_A))
-
-    df = pd.DataFrame(pred_A)
-    sns.set()
-    ax = sns.heatmap(df, square=True, center=0, cmap="RdBu_r")
-
-    savefig(
-        ax.get_figure(),
-        osp.join(
-            data_args.output_path,
-            data_args.dataset,
-            f"{data_args.dataset}_{split_id}-{model_args.model}-score_mat.pdf",
-        ),
-    )
-
-data_args = argparse.Namespace(
-    dataset="mhp-1K-10", input_path="data/input", output_path="data/output"
-)
-print(data_args)
-
-model_args = argparse.Namespace(
-    model="HSG", max_mean=100, n_bases=7, hidden_size=64, lr=0.001
-)
-print(model_args)
-
-for split_id in range(5):
-    plt.figure()
-    pred_A = np.loadtxt(
-        osp.join(
-            data_args.output_path,
-            data_args.dataset,
-            f"split_id={split_id}",
-            model_args.model,
-            get_hparam_str(model_args),
-            "scores_mat.txt",
-        )
-    )
-    pred_A = (pred_A - np.min(pred_A))/(np.max(pred_A) - np.min(pred_A))
-
-    df = pd.DataFrame(pred_A)
-    sns.set()
-    ax = sns.heatmap(df, square=True, center=0, cmap="RdBu_r")
-
-    savefig(
-        ax.get_figure(),
-        osp.join(
-            data_args.output_path,
-            data_args.dataset,
-            f"{data_args.dataset}_{split_id}-{model_args.model}-score_mat.pdf",
-        ),
-    )
-
-data_args = argparse.Namespace(
-    dataset="mhp-1K-10", input_path="data/input", output_path="data/output"
-)
-print(data_args)
-
-model_args = argparse.Namespace(
-    model="RPPN", max_mean=100, n_bases=7, hidden_size=64, lr=0.001
-)
-print(model_args)
-
-for split_id in range(5):
-    plt.figure()
-    pred_A = np.loadtxt(
-        osp.join(
-            data_args.output_path,
-            data_args.dataset,
-            f"split_id={split_id}",
-            model_args.model,
-            get_hparam_str(model_args),
-            "scores_mat.txt",
-        )
-    )
-    pred_A = (pred_A - np.min(pred_A))/(np.max(pred_A) - np.min(pred_A))
-
-    df = pd.DataFrame(pred_A)
-    sns.set()
-    ax = sns.heatmap(df, square=True, center=0, cmap="RdBu_r")
-
-    savefig(
-        ax.get_figure(),
-        osp.join(
-            data_args.output_path,
-            data_args.dataset,
-            f"{data_args.dataset}_{split_id}-{model_args.model}-score_mat.pdf",
-        ),
-    )
-
-
-data_args = argparse.Namespace(
-    dataset="pgem-1K-10", input_path="data/input", output_path="data/output"
-)
-print(data_args)
-
-model_args = argparse.Namespace(
-    model="ERPP", max_mean=20.0, n_bases=7, hidden_size=64, lr=0.001
-)
-print(model_args)
-
-for split_id in range(5):
-    plt.figure()
-    pred_A = np.loadtxt(
-        osp.join(
-            data_args.output_path,
-            data_args.dataset,
-            f"split_id={split_id}",
-            model_args.model,
-            get_hparam_str(model_args),
-            "scores_mat.txt",
-        )
-    )
-    pred_A = (pred_A - np.min(pred_A))/(np.max(pred_A) - np.min(pred_A))
-
-    df = pd.DataFrame(pred_A)
-    sns.set()
-    ax = sns.heatmap(df, square=True, center=0, cmap="RdBu_r")
-
-    savefig(
-        ax.get_figure(),
-        osp.join(
-            data_args.output_path,
-            data_args.dataset,
-            f"{data_args.dataset}_{split_id}-{model_args.model}-score_mat.pdf",
-        ),
-    )
-
-data_args = argparse.Namespace(
-    dataset="pgem-1K-10", input_path="data/input", output_path="data/output"
+    dataset="pgem-1K-15", input_path="data/input", output_path="data/output_baseline"
 )
 print(data_args)
 
@@ -263,7 +263,7 @@ for split_id in range(5):
     )
 
 data_args = argparse.Namespace(
-    dataset="pgem-1K-10", input_path="data/input", output_path="data/output"
+    dataset="pgem-1K-15", input_path="data/input", output_path="data/output_baseline"
 )
 print(data_args)
 
@@ -300,12 +300,49 @@ for split_id in range(5):
     )
 
 data_args = argparse.Namespace(
-    dataset="pgem-1K-10", input_path="data/input", output_path="data/output"
+    dataset="pgem-1K-15", input_path="data/input", output_path="data/output_baseline"
 )
 print(data_args)
 
 model_args = argparse.Namespace(
     model="RPPN", max_mean=20.0, n_bases=7, hidden_size=64, lr=0.001
+)
+print(model_args)
+
+for split_id in range(5):
+    plt.figure()
+    pred_A = np.loadtxt(
+        osp.join(
+            data_args.output_path,
+            data_args.dataset,
+            f"split_id={split_id}",
+            model_args.model,
+            get_hparam_str(model_args),
+            "scores_mat.txt",
+        )
+    )
+    pred_A = (pred_A - np.min(pred_A))/(np.max(pred_A) - np.min(pred_A))
+
+    df = pd.DataFrame(pred_A)
+    sns.set()
+    ax = sns.heatmap(df, square=True, center=0, cmap="RdBu_r")
+
+    savefig(
+        ax.get_figure(),
+        osp.join(
+            data_args.output_path,
+            data_args.dataset,
+            f"{data_args.dataset}_{split_id}-{model_args.model}-score_mat.pdf",
+        ),
+    )
+
+data_args = argparse.Namespace(
+    dataset="pgem-1K-15", input_path="data/input", output_path="data/output_baseline"
+)
+print(data_args)
+
+model_args = argparse.Namespace(
+    model="ERPP", max_mean=20.0, n_bases=7, hidden_size=64, lr=0.0008
 )
 print(model_args)
 

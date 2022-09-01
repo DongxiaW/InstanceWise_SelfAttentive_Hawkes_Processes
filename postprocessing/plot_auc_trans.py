@@ -32,8 +32,8 @@ def get_parser():
     parser.add_argument(
         "--input_path",
         type=str,
-        default="data/output/results_final.csv",
-        help="The path to write the result. Default: data/output/results.csv",
+        default="data/output_baseline/results.csv",
+        help="The path to write the result. Default: data/output_baseline/results.csv",
     )
 
     return parser
@@ -64,11 +64,11 @@ df.config = df.config.apply(ast.literal_eval)
 datasets = [
     "mhp-1K-10",
     # "mscp-1K-10",
-    "pgem-1K-10",
+    "pgem-1K-15",
     # "IPTV",
     # "MemeTracker-0.4M-100",
 ]
-ylims = [950, 300, 600, None, None, None]
+# ylims = [950, 300, 600, None, None, None]
 
 color = sns.color_palette(n_colors=6)[-1]
 
@@ -78,13 +78,13 @@ for i in range(len(datasets)):
     plt.figure()
     data = df.query(f'dataset == "{dataset}" and metric=="auc"')
     data.model = data.model.replace(renaming)
-
+    sns.set(font_scale=0.7)
     ax = sns.barplot(
         x="model",
         y="value",
         data=data,
-        order=["HExp", 'HSG', "RPPN", renaming["ERPP"], "Tran"],
-        capsize=0.005,
+        order=["Tran_l1_h1","Tran_l2_h1","Tran_l3_h1","Tran_l4_h1","Tran_l1_h5","Tran_l2_h5","Tran_l3_h5","Tran_l4_h5"],
+        capsize=0.005, #0.005
     )
 
     ax.set_xlabel("")
@@ -110,5 +110,5 @@ for i in range(len(datasets)):
     #     )
 
     savefig(
-        ax.get_figure(), osp.join("data/output", dataset, f"{dataset}-auc-Tran_final.pdf")
+        ax.get_figure(), osp.join("data/output_baseline", dataset, f"{dataset}-auc-Tran.pdf")
     )
