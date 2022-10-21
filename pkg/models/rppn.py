@@ -178,6 +178,25 @@ class RecurrentPointProcessNet(nn.Module):
 
         return metrics
 
+    def predict_next_event_type(self, dataloader, device=None):
+
+        event_seqs_pred_type = []
+        with torch.no_grad():
+            for batch in tqdm(dataloader):
+                batch = batch.to(device)
+
+                seq_length = (batch.abs().sum(-1) > 0).sum(-1)
+                mask = generate_sequence_mask(seq_length)
+
+                intensity = self.forward(batch)
+                intensity = intensity.masked_select(mask[:, :, None]).view(
+                    -1, self.n_types
+                )
+                k_pred = intensity.argmax(-1).cpu().numpy()
+                event_seqs_pred_type.append(k_pred)
+
+        return event_seqs_pred_type
+
     def predict_next_event(self, dataloader, n_samples=100, device=None):
         event_seqs_pred = []
         with torch.no_grad():

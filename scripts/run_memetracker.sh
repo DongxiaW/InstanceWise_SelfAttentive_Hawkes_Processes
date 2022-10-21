@@ -3,9 +3,9 @@ WS=`pwd`
 CUDA_DEVICE_ORDER=PCI_BUS_ID
 LOCAL_RUN="xargs -L1 python"
 
-n_types=100
+n_types=25 #100
 # dataset="MemeTracker-0.2M-$n_types"
-dataset="MemeTracker-0.4M-$n_types"
+dataset="MemeTracker-0.0M-$n_types"
 # dataset="MemeTracker-1.8M-$n_types"
 shared_args="--dataset $dataset --skip_pred_next_event --verbose"
 
@@ -18,19 +18,19 @@ fi
 
 # preprocessing/data generation
 
-if [[ $* == *all* ]] || [[ $* == *preprocess* ]]; then
-    # the preprocessing would take about around 4 hours
-    # python preprocessing/export_MemeTracker_to_parquet.py
+# if [[ $* == *all* ]] || [[ $* == *preprocess* ]]; then
+#     # the preprocessing would take about around 4 hours
+#     # python preprocessing/export_MemeTracker_to_parquet.py
 
-    # process the parquet files into event sequences
-    python preprocessing/process_MemeTracker_spark.py \
-        --n_top_sites $n_types \
-        --min_seq_length 3 \
-        --max_seq_length 500 \
-        --time_divisor 3600.0 \
-        --end_date 2008-09-30
-        # --end_date 2008-08-31
-fi
+#     # process the parquet files into event sequences
+#     python preprocessing/process_MemeTracker_spark.py \
+#         --n_top_sites $n_types \
+#         --min_seq_length 3 \
+#         --max_seq_length 500 \
+#         --time_divisor 3600.0 \
+#         --end_date 2008-09-30
+#         # --end_date 2008-08-31
+# fi
 
 # training for each methods
 

@@ -28,9 +28,9 @@ if [[ $* == *all* ]] || [[ $* == *HExp* ]]; then
     printf "%s\n" "$WS/tasks/train.py HExp $shared_args --decay 0.1 --penalty 2.0 --split_id "{0..4} | $LOCAL_RUN
 fi
 
-# if [[ $* == *all* ]] || [[ $* == *NPHC* ]]; then
-#     printf "%s\n" "$WS/tasks/train.py NPHC $shared_args --integration_support 20 --verbose --split_id "{0..4} | $LOCAL_RUN
-# fi
+if [[ $* == *all* ]] || [[ $* == *NPHC* ]]; then
+    printf "%s\n" "$WS/tasks/train.py NPHC $shared_args --integration_support 20 --verbose --split_id "{0..4} | $LOCAL_RUN
+fi
 
 if [[ $* == *all* ]] || [[ $* == *HSG* ]]; then
     printf "%s\n" "$WS/tasks/train.py HSG $shared_args --max_mean 1000 --n_gaussians 5 --verbose --split_id "{0..4} | $LOCAL_RUN
@@ -43,6 +43,11 @@ fi
 if [[ $* == *all* ]] || [[ $* == *ERPP* ]]; then
     printf "%s\n" "$WS/tasks/train.py ERPP $shared_args --max_mean 20 --n_bases 7 --cuda --split_id "{0..4} | $LOCAL_RUN
 fi
+
+if [[ $* == *all* ]] || [[ $* == *ISAHP* ]]; then
+    printf "%s\n" "$WS/tasks/train.py ISAHP $shared_args --cuda --split_id "{0} | $LOCAL_RUN
+fi
+
 
 # if [[ $* == *all* ]] || [[ $* == *Tran* ]]; then
 #     printf "%s\n" "$WS/tasks/train.py Tran $shared_args --max_mean 20 --n_bases 7 --cuda --split_id "{0..4} | $LOCAL_RUN
