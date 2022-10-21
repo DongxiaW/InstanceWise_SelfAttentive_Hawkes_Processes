@@ -19,15 +19,8 @@ elif "pkg" not in os.listdir("."):
     os.chdir("..")
 sys.path.append(".")
 
-from pkg.utils.plotting import savefig
-
-from pkg.models.rnn import (
-    EventSeqDataset,
-    ExplainableRecurrentPointProcess,
-)
+from pkg.models.eventseqdataset import EventSeqDataset
 from pkg.models.isahp import InstancewiseSelfAttentiveHawkesProcesses
-from pkg.models.sahp import SelfAttentiveHawkesProcesses
-from pkg.models.rppn import RecurrentPointProcessNet
 from pkg.utils.argparser.training import add_subparser_arguments
 from pkg.utils.evaluation import eval_fns
 from pkg.utils.logging import get_logger, init_logging
@@ -40,11 +33,7 @@ from pkg.utils.misc import (
     makedirs,
     set_rand_seed,
 )
-from pkg.utils.pp import (
-    eval_nll_hawkes_exp_kern,
-    eval_nll_hawkes_sum_gaussians,
-    event_seq_to_counting_proc,
-)
+
 from pkg.utils.torch import split_dataloader, convert_to_bucketed_dataloader
 
 
@@ -53,7 +42,7 @@ def get_parser():
     subparsers = parser.add_subparsers(
         description="Supported models", dest="model"
     )
-    for model in ["ERPP", "RME", "RPPN", "HExp", "HSG", "NPHC", "ISAHP", 'SAHP']:
+    for model in ["ISAHP"]:
         add_subparser_arguments(model, subparsers)
 
     return parser
@@ -62,34 +51,6 @@ def get_parser():
 def get_model(args, n_types):
     if args.model == "ISAHP":
         model = InstancewiseSelfAttentiveHawkesProcesses(n_types=n_types, **vars(args))
-    elif args.model == "SAHP":
-        model = SelfAttentiveHawkesProcesses(n_types=n_types, **vars(args))
-    elif args.model == "ERPP":
-        model = ExplainableRecurrentPointProcess(n_types=n_types, **vars(args))
-    elif args.model == "RPPN":
-        model = RecurrentPointProcessNet(n_types=n_types, **vars(args))
-    elif args.model == "HExp":
-        from tick.hawkes import HawkesExpKern
-
-        model = HawkesExpKern(args.decay, C=args.penalty, verbose=args.verbose)
-    elif args.model == "HSG":
-        from tick.hawkes import HawkesSumGaussians
-
-        model = HawkesSumGaussians(
-            args.max_mean,
-            n_gaussians=args.n_gaussians,
-            C=args.penalty,
-            n_threads=args.n_threads,
-            verbose=args.verbose,
-        )
-    elif args.model == "NPHC":
-        from tick.hawkes import HawkesCumulantMatching
-
-        model = HawkesCumulantMatching(
-            integration_support=args.integration_support,
-            C=args.penalty,
-            verbose=args.verbose,
-        )
     else:
         raise ValueError(f"Unsupported model={args.model}")
 
@@ -99,8 +60,7 @@ def get_model(args, n_types):
 def get_device(cuda, dynamic=True):
     if torch.cuda.is_available() and args.cuda:
         if dynamic:
-            # device = torch.device("cuda", get_freer_gpu(by="n_proc"))
-            device = torch.device("cuda: 5")
+            device = torch.device("cuda: 0")
         else:
             device = torch.device("cuda")
     else:
@@ -112,10 +72,6 @@ def get_device(cuda, dynamic=True):
 def get_hparam_str(args):
     if args.model == "ISAHP":
         hparams = ["batch_size", "hidden_size", "num_head", "l1_reg", "type_reg", "lr"]
-    elif args.model == "SAHP":
-        hparams = ["batch_size", "hidden_size", "num_head", "lr"]
-    elif args.model == "ERPP":
-        hparams = ["max_mean", "n_bases", "hidden_size", "lr"]
     else:
         hparams = []
 
@@ -178,7 +134,7 @@ def train_nn_models(model, event_seqs, args):
 
 
 def eval_nll(model, event_seqs, args):
-    if args.model in ["RME", "ERPP", "RPPN", "ISAHP", "SAHP"]:
+    if args.model in ["ISAHP"]:
 
         dataloader = DataLoader(
             EventSeqDataset(event_seqs), shuffle=False, **dataloader_args
@@ -191,11 +147,6 @@ def eval_nll(model, event_seqs, args):
         )
         nll = metrics["nll"].avg.item()
 
-    elif args.model == "HSG":
-        nll = eval_nll_hawkes_sum_gaussians(event_seqs, model, verbose=True)
-
-    elif args.model == "HExp":
-        nll = eval_nll_hawkes_exp_kern(event_seqs, model, verbose=True)
     else:
         nll = float("nan")
         print("not supported yet")
@@ -204,29 +155,12 @@ def eval_nll(model, event_seqs, args):
 
 
 def predict_next_event(model, event_seqs, args):
-    if args.model in ["ERPP", "RPPN"]:
-        dataloader = DataLoader(
-            EventSeqDataset(event_seqs), shuffle=False, **dataloader_args
-        )
-        event_seqs_pred = model.predict_next_event_type(dataloader, device=device)
-    elif args.model in ["ISAHP", "SAHP"]:
+    if args.model == "ISAHP":
         dataloader = DataLoader(
             EventSeqDataset(event_seqs), shuffle=False, **dataloader_args
         )
         event_seqs_pred_type, event_seqs_truth_type = model.predict_next_event_type(dataloader, device=device)
         return event_seqs_pred_type, event_seqs_truth_type
-    elif args.model == "HExp":
-        from pkg.utils.pp import eval_nll_hawkes_exp_kern_type
-
-        event_seqs_pred = eval_nll_hawkes_exp_kern_type(
-            event_seqs, model, verbose=True
-        )
-    elif args.model == "HSG":
-        from pkg.utils.pp import eval_nll_hawkes_sum_gaussians_type
-
-        event_seqs_pred = eval_nll_hawkes_sum_gaussians_type(
-            event_seqs, model, verbose=True
-        )
     else:
         print(
             "Predicting next event is not supported for "
@@ -239,7 +173,7 @@ def predict_next_event(model, event_seqs, args):
 
 def get_infectivity_matrix(model, event_seqs, args):
 
-    if args.model in ["RME", "ERPP", "RPPN", "ISAHP", "SAHP"]:
+    if args.model in ["ISAHP"]:
         _dataloader_args = dataloader_args.copy()
         if "attr_batch_size" in args and args.attr_batch_size:
             _dataloader_args.update(batch_size=args.attr_batch_size)
@@ -250,7 +184,11 @@ def get_infectivity_matrix(model, event_seqs, args):
         dataloader = convert_to_bucketed_dataloader(dataloader, key_fn=len)
         infectivity = model.get_infectivity(dataloader, device, **vars(args))
     else:
-        infectivity = model.get_kernel_norms()
+        print(
+            "Computing infectivity matrix is not supported for "
+            f"model={args.model} yet."
+        )
+        infectivity = None
 
     return infectivity
 
@@ -296,7 +234,7 @@ if __name__ == "__main__":
         # define model
         model = get_model(args, n_types)
 
-        if args.model in ["RME", "ERPP", "RPPN", "ISAHP", "SAHP"]:
+        if args.model in ["ISAHP"]:
             dataloader_args = {
                 "batch_size": args.batch_size,
                 "collate_fn": EventSeqDataset.collate_fn,
@@ -307,23 +245,6 @@ if __name__ == "__main__":
 
             model = model.to(device)
             model = train_nn_models(model, train_event_seqs, args)
-
-        else:
-            # NOTE: may change to weighted sampling (by seq length)
-            if "max_seqs" in args and args.max_seqs > 0:
-                train_event_seqs = random.sample(
-                    list(train_event_seqs), args.max_seqs
-                )
-
-            train_cps = [
-                event_seq_to_counting_proc(seq, n_types, to_numpy=True)
-                for seq in tqdm(train_event_seqs)
-            ]
-            model.fit(train_cps)
-            # TODO: many tick models can't be easily pickled. Probabily need to
-            # write a wrapper class.
-            # with open(osp.join(output_path, "model.pkl"), "wb") as f:
-            # pickle.dump(model, f)
 
     # evaluate nll
     results = {}
@@ -342,13 +263,12 @@ if __name__ == "__main__":
             event_seqs_pred = np.concatenate(event_seqs_pred_type1)
             event_seqs_truth = np.concatenate(event_seqs_truth_type1)
 
-
             if event_seqs_pred is not None:
                 for metric_name in ["acc"]:
                     results[metric_name] = eval_fns[metric_name](
                         event_seqs_truth, event_seqs_pred
                     )
-                    print(metric_name, results[metric_name])
+                    # print(metric_name, results[metric_name])
 
     # evaluate infectivity matrix
     if not args.skip_eval_infectivity:
@@ -359,23 +279,6 @@ if __name__ == "__main__":
 
             for metric_name in ["auc", "kendall_tau", "spearman_rho"]:
                 results[metric_name] = eval_fns[metric_name](A_true, A_pred)
-
-        if not isinstance(A_pred, np.ndarray):
-            A_pred = A_pred.numpy()
-        A_pred = (A_pred - np.min(A_pred))/(np.max(A_pred) - np.min(A_pred))
-        # pred_A = (pred_A - np.min(pred_A))
-
-        df = pd.DataFrame(A_pred)
-        sns.set()
-        ax = sns.heatmap(df, square=True, center=0, cmap="RdBu_r")
-
-        savefig(
-            ax.get_figure(),
-            osp.join(
-                output_path,
-                "plot_scores_mat.pdf",
-            ),
-        )
 
     # export evaluation results
     time = pd.Timestamp.now()
@@ -405,3 +308,4 @@ if __name__ == "__main__":
 
     logger.info(df)
     export_csv(df, osp.join(args.output_dir, "results.csv"), append=True)
+

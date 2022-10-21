@@ -10,14 +10,7 @@ def calc_accuracy(A_true, A_pred, row_wise=False):
     if row_wise:
         raise NotImplementedError()
     else:
-        if (A_true >= 0).all():
-            A_true_bin = A_true > 0
-            A_pred_bin = A_pred > 0
-        else:
-            A_true_bin = A_true >= 0
-            A_pred_bin = A_pred >= 0
-
-        return accuracy_score(A_true_bin.flatten(), A_pred_bin.flatten())
+        return accuracy_score(A_true.flatten(), A_pred.flatten())
 
 
 def calc_roc_auc(A_true, A_pred, row_wise=False):

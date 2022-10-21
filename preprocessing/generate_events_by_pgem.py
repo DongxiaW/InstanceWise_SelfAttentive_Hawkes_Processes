@@ -40,41 +40,91 @@ def get_parser():
     parser.add_argument("--max_t", type=int, default=1000, help="default: 1000")
 
     parser.add_argument(
-        "--win_e_a", type=float, default=200, help="default: 200"
+        "--win_e_a", type=float, default=20, help="default: 200"
     )
     parser.add_argument(
-        "--win_e_b", type=float, default=200, help="default: 200"
+        "--win_e_b", type=float, default=20, help="default: 200"
     )
     parser.add_argument(
-        "--win_e_c", type=float, default=20, help="default: 20"
+        "--win_e_c", type=float, default=2, help="default: 20"
     )
 
     parser.add_argument(
-        "--intens_a", type=float, default=0.005, help="default: 0.005"
+        "--intens_a", type=float, default=0.08, help="default: 0.005"
     )
     parser.add_argument(
-        "--intens_b", type=float, default=0.005, help="default: 0.005"
+        "--intens_b", type=float, default=0.08, help="default: 0.005"
     )
     parser.add_argument(
-        "--intens_c", type=float, default=0.05, help="default: 0.05"
+        "--intens_c", type=float, default=0.8, help="default: 0.05"
     )
     parser.add_argument(
-        "--intens_d", type=float, default=0.05, help="default: 0.05"
+        "--intens_d", type=float, default=0.2, help="default: 0.05"
     )
     parser.add_argument(
-        "--intens_e_base", type=float, default=0.005, help="default: 0.005"
+        "--intens_e_base", type=float, default=0.04, help="default: 0.005"
     )
     parser.add_argument(
-        "--intens_e_direct", type=float, default=0.015, help="default: 0.015"
+        "--intens_e_direct", type=float, default=0.06, help="default: 0.015"
     )
     parser.add_argument(
-        "--intens_e_syn", type=float, default=0.05, help="default: 0.05"
+        "--intens_e_syn", type=float, default=0.2, help="default: 0.05"
     )
 
     parser.add_argument("--n_splits", type=int, default=5, help="default: 5")
-    parser.add_argument("--rand_seed", type=int, default=1, help="default: 1")
+    parser.add_argument("--rand_seed", type=int, default=0, help="default: 0")
 
     return parser
+
+# def get_parser():
+#     parser = argparse.ArgumentParser(
+#         description=(
+#             "Generate event sequences from Proximal Graphical Event Model."
+#         )
+#     )
+#     parser.add_argument("--name", type=str, default="pgem")
+#     parser.add_argument(
+#         "--n_seqs", type=int, default=1000, help="default: 1000"
+#     )
+#     parser.add_argument("--n_copies", type=int, default=3, help="default: 3")
+#     parser.add_argument("--max_t", type=int, default=1000, help="default: 1000")
+
+#     parser.add_argument(
+#         "--win_e_a", type=float, default=40, help="default: 200"
+#     )
+#     parser.add_argument(
+#         "--win_e_b", type=float, default=40, help="default: 200"
+#     )
+#     parser.add_argument(
+#         "--win_e_c", type=float, default=4, help="default: 20"
+#     )
+
+#     parser.add_argument(
+#         "--intens_a", type=float, default=0.01, help="default: 0.005"
+#     )
+#     parser.add_argument(
+#         "--intens_b", type=float, default=0.01, help="default: 0.005"
+#     )
+#     parser.add_argument(
+#         "--intens_c", type=float, default=0.1, help="default: 0.05"
+#     )
+#     parser.add_argument(
+#         "--intens_d", type=float, default=0.1, help="default: 0.05"
+#     )
+#     parser.add_argument(
+#         "--intens_e_base", type=float, default=0.01, help="default: 0.005"
+#     )
+#     parser.add_argument(
+#         "--intens_e_direct", type=float, default=0.03, help="default: 0.015"
+#     )
+#     parser.add_argument(
+#         "--intens_e_syn", type=float, default=0.1, help="default: 0.05"
+#     )
+
+#     parser.add_argument("--n_splits", type=int, default=5, help="default: 5")
+#     parser.add_argument("--rand_seed", type=int, default=0, help="default: 0")
+
+#     return parser
 
 
 args = get_parser().parse_args()
@@ -183,3 +233,4 @@ for split_id, res in enumerate(results):
         )
 
 export_csv(df, "data/output/results.csv", append=True)
+

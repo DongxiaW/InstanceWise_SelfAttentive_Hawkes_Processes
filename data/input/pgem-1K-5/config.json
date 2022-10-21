@@ -1,0 +1,18 @@
+{
+    "name": "pgem",
+    "n_seqs": 1000,
+    "n_copies": 1,
+    "max_t": 30,
+    "win_e_a": 20,
+    "win_e_b": 20,
+    "win_e_c": 2,
+    "intens_a": 0.08,
+    "intens_b": 0.08,
+    "intens_c": 0.8,
+    "intens_d": 0.2,
+    "intens_e_base": 0.04,
+    "intens_e_direct": 0.06,
+    "intens_e_syn": 0.2,
+    "n_splits": 5,
+    "rand_seed": 0
+}

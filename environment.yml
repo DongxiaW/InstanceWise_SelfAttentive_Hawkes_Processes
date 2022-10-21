@@ -9,10 +9,10 @@ dependencies:
   - scikit-learn
   - pandas
   - pytorch::pytorch=1.2.0
-  - joblib 
-  - cxx-compiler # required by tick
-  - dill # required by tick
-  - swig # required by tick
+  - joblib
+  - cxx-compiler
+  - dill
+  - swig
   - pip
   - pip:
     - tick==0.6.0

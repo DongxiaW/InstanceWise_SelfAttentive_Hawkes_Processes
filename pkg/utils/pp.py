@@ -410,92 +410,6 @@ def eval_nll_self_correcting_processes(
 
     return nll / len(event_seqs)
 
-def eval_nll_hawkes_exp_kern_type(event_seqs, model, verbose=False):
-    """ Compute the average of negative log-likelihood
-    Args:
-        event_seqs (list[EventSequence])
-        model (tick.hawkes.HawkesExpKern):
-
-    """
-    baseline = np.asarray(model.baseline)
-    adjacency = model.adjacency
-    if isinstance(model.decays, float):
-        decays = np.full_like(adjacency, model.decays)
-    else:
-        decays = np.asarray(model.decays)
-    n_types = len(model.baseline)
-
-    event_seqs_pred_type = []
-    for seq in tqdm(event_seqs) if verbose else event_seqs:
-        # states[k, k']: cumulative excitation from k' to k
-        states = np.zeros((n_types, n_types))
-
-        last_t = 0
-        intensity_list = []
-        for t, k in seq:
-            k = int(k)
-            dt = t - last_t
-            # decayed excitations
-            states_new = states * np.exp(-decays * dt)
-            intensity = (baseline + states_new.sum(-1)).argmax(-1)
-            intensity_list.append(intensity)
-
-            states = states_new
-            states[:, k] += adjacency[:, k] * decays[:, k]
-            last_t = t
-        event_seqs_pred_type.append(np.array(intensity_list))
-
-
-    return event_seqs_pred_type
-
-
-# def eval_nll_hawkes_sum_gaussians_type(event_seqs, model, verbose=False):
-#     """ Compute the average of negative log-likelihood
-#     Args:
-#         event_seqs (list[EventSequence])
-#         model (tick.hawkes.HawkesSumGaussians):
-
-#     """
-
-#     baseline = np.asarray(model.baseline)
-#     amplitudes = np.asarray(model.amplitudes)
-#     loc = np.asarray(model.means_gaussians)
-#     scale = model.std_gaussian
-
-#     event_seqs_pred_type = []
-#     for seq in tqdm(event_seqs) if verbose else event_seqs:
-
-#         T = seq[-1][0]
-#         ts = np.asarray([t for t, _ in seq])
-#         ks = np.asarray([k for _, k in seq]).astype(int)
-#         print('ks',ks)
-#         # dt[i][j] = ts[i] - t[j]
-#         dt = ts[:, None] - ts[None, :]
-#         # basis_weights[i, j, r] = amplitudes[ki, kj, r]
-#         basis_weights = np.take(np.take(amplitudes, ks, axis=0), ks, axis=1)
-#         print('basis_weights.shape', basis_weights.shape)
-#         print('amplitudes.shape',amplitudes.shape)
-#         # basis_values[i, j, r] = \phi_r(ti - tj)
-#         basis_values = norm.pdf(np.expand_dims(dt, -1), loc, scale)
-#         print('basis_values.shape', basis_values.shape)
-#         # sum of all previous events excitation
-#         trial = basis_weights * basis_values
-#         print('trial.shape',trial.shape)
-
-
-#         excitations = np.tril((basis_weights * basis_values).transpose(2,0,1), k=-1
-#         )
-#         excitations = excitations.sum(-1).transpose(1,0)
-#         # print('excitations.shape',excitations.shape)
-#         # assert excitations[0] == 0
-#         intensities = (baseline + excitations).argmax(-1)
-
-#         event_seqs_pred_type.append(intensities)
-#         dt = np.expand_dims(T - ts, -1)
-
-
-#     return event_seqs_pred_type
-
 
 def predict_next_event_hawkes_exp_kern(
     event_seqs, model, n_samples=100, verbose=False
@@ -520,7 +434,6 @@ def predict_next_event_hawkes_exp_kern(
         ).sum((1, 2))
 
     event_seqs_pred = []
-    # event_seqs_pred_type = []
     for seq in tqdm(event_seqs) if verbose else event_seqs:
         # states[i, k, k']: cumulative excitation from k' to k with first i
         # events.
@@ -551,17 +464,12 @@ def predict_next_event_hawkes_exp_kern(
             idx = idx[~flag]
         ts = ts.reshape(-1, n_samples).mean(-1)
 
-        # intensity_k = (states.sum(-1)+ baseline).argmax(-1)
-        # intensity_k = (states.sum(-1)).argmax(-1)
-
         seq_pred = np.pad([t for t, _ in seq[:-1]], (1, 0)) + ts
         seq_pred = np.pad(seq_pred[:, None], [(0, 0), (0, 1)])
 
         event_seqs_pred.append(seq_pred)
-        # event_seqs_pred_type.append(intensity_k)
 
     return event_seqs_pred
-    # return event_seqs_pred, event_seqs_pred_type
 
 
 def predict_next_event_self_correction(

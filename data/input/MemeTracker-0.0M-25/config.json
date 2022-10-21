@@ -1,0 +1,13 @@
+{
+    "dataset": "MemeTracker",
+    "input_path": "data/raw/MemeTracker/parquet",
+    "output_path": "data/input",
+    "n_top_sites": 25,
+    "min_seq_length": 3,
+    "max_seq_length": 100,
+    "time_divisor": 3600.0,
+    "start_date": "2008-08-01",
+    "end_date": "2009-05-01",
+    "n_splits": 5,
+    "rand_seed": 0
+}

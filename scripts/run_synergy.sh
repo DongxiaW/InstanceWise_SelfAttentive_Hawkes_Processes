@@ -3,10 +3,10 @@ CUDA_DEVICE_ORDER=PCI_BUS_ID
 WS=`pwd`
 
 n_seqs=1000
-n_types=15
+n_types=5
 dataset=pgem-$(($n_seqs / 1000))K-$n_types
 shared_args="--dataset $dataset"
-n_splits=5  # if modified, remember to modify below as well!!!
+n_splits=5
 
 LOCAL_RUN="xargs -L1 python"
 
@@ -17,40 +17,16 @@ elif [ $# == 0 ]; then
     exit 1
 fi
 
-if [[ $* == *all* ]] || [[ $* == *preprocess* ]]; then
+if [[ $* == *preprocess* ]]; then
     python preprocessing/generate_events_by_pgem.py \
         --n_seqs $n_seqs \
-        --n_copies 3 \
-        --max_t 1000
+        --n_copies 1 \
+        --max_t 30
 fi
 
-if [[ $* == *all* ]] || [[ $* == *HExp* ]]; then
-    printf "%s\n" "$WS/tasks/train.py HExp $shared_args --decay 0.1 --penalty 2.0 --split_id "{0..4} | $LOCAL_RUN
-fi
-
-if [[ $* == *all* ]] || [[ $* == *NPHC* ]]; then
-    printf "%s\n" "$WS/tasks/train.py NPHC $shared_args --integration_support 20 --verbose --split_id "{0..4} | $LOCAL_RUN
-fi
-
-if [[ $* == *all* ]] || [[ $* == *HSG* ]]; then
-    printf "%s\n" "$WS/tasks/train.py HSG $shared_args --max_mean 1000 --n_gaussians 5 --verbose --split_id "{0..4} | $LOCAL_RUN
-fi
-
-if [[ $* == *all* ]] || [[ $* == *RPPN* ]]; then
-    printf "%s\n" "$WS/tasks/train.py RPPN $shared_args --epoch 200 --cuda --split_id "{0..4} | $LOCAL_RUN
-fi
-
-if [[ $* == *all* ]] || [[ $* == *ERPP* ]]; then
-    printf "%s\n" "$WS/tasks/train.py ERPP $shared_args --max_mean 20 --n_bases 7 --cuda --split_id "{0..4} | $LOCAL_RUN
-fi
 
 if [[ $* == *all* ]] || [[ $* == *ISAHP* ]]; then
-    printf "%s\n" "$WS/tasks/train.py ISAHP $shared_args --cuda --split_id "{0} | $LOCAL_RUN
+    printf "%s\n" "$WS/tasks/train_isahp.py ISAHP $shared_args --type_reg 0.25 --l1_reg 0.025 --lr 0.001 --epochs 200 --batch_size 8 --embedding_dim 9 --hidden_size 10 --num_head 2 --cuda --split_id "{0..0} | $LOCAL_RUN
 fi
 
 
-# if [[ $* == *all* ]] || [[ $* == *Tran* ]]; then
-#     printf "%s\n" "$WS/tasks/train.py Tran $shared_args --max_mean 20 --n_bases 7 --cuda --split_id "{0..4} | $LOCAL_RUN
-# fi
-
-# python postprocessing/summarize_results.py $dataset
